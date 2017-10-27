@@ -89,7 +89,7 @@ pre {
 .sidebar-nav h4 {
   font-size: 12px;
   text-transform: uppercase;
-  color: #BBB;
+  color: #222;
   margin-bottom: 10px;
 }
 
@@ -221,15 +221,16 @@ pre {
 
 .footer {
   font-size: 11px;
-  color: #AAAAAA;
+  color: #222;
 }
 
-.footer a:visited, .footer a:link, .footer a:active {
-  color: #AAAAAA;
+.footer a {
+  text-decoration: underline;
 }
 
-.footer a:hover {
-  color: #7E267E;
+.footer a:visited, .footer a:link, .footer a:active, .footer a:hover  {
+  color: #FF0000;
+  text-decoration: underline;
 }
 
 .footer-right {
