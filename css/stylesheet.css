@@ -11,8 +11,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a:hover, a:visited, a:link, a:active {
+a {
+  color: #FF0000;
   text-decoration: none;
+}
+
+a:hover, a:visited, a:active {
+  color: #FF0000;
+  text-decoration: underline;
 }
 
 hr {
@@ -112,6 +118,7 @@ pre {
   color: #FF0000;
   border-left: 5px solid transparent;
   padding-left: 3px;
+  text-decoration: none;
 }
 
 .sidebar-nav ul+h4 {
@@ -225,10 +232,11 @@ pre {
 }
 
 .footer a {
-  text-decoration: underline;
+  color: #FF0000;
+  text-decoration: none;
 }
 
-.footer a:visited, .footer a:link, .footer a:active, .footer a:hover  {
+.footer a:visited, .footer a:active, .footer a:hover  {
   color: #FF0000;
   text-decoration: underline;
 }
