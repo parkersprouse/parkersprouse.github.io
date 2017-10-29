@@ -70,10 +70,22 @@
             <h1 class="section-header">Contact Me</h1>
             <hr />
             <p>
-              <form method="POST" action="http://formspree.io/parker.sprouse@gmail.com">
-                <input type="email" name="email" placeholder="Your email" />
-                <textarea name="message" placeholder="Your message"></textarea>
-                <button type="submit">Send</button>
+              Say hi by filling out the form below.
+            </p>
+            <p>
+              <form class="form-horizontal" method="POST" action="http://formspree.io/parker.sprouse@gmail.com">
+                <div class="form-group">
+                  <input type="email" name="email" class="form-control" placeholder="Your email" required />
+                </div>
+                <div class="form-group">
+                  <textarea name="message" class="form-control" placeholder="Your message" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-default">Send</button>
+                </div>
+                <input name="_gotcha" style="display: none;" />
+                <input name="_next" type="hidden" value="thanks.html" />
+                <input name="_subject" type="hidden" value="New Contact Message" />
               </form>
             </p>
           </div>
