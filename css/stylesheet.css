@@ -116,7 +116,8 @@ pre {
 
 .sidebar-nav ul li a:hover,
 .sidebar-nav ul li a:active,
-.sidebar-nav ul li a:focus {
+.sidebar-nav ul li a:focus,
+.sidebar-nav .active {
   color: #FF0000;
   border-left: 8px solid transparent;
   text-decoration: none;
@@ -126,10 +127,10 @@ pre {
   margin-top: 22px;
 }
 
-.sidebar-nav .active {
+/*.sidebar-nav .active {
   font-weight: bold;
   color: #FF0000;
-}
+}*/
 
 @media (max-width: 768px) {
   .sidebar-nav {
