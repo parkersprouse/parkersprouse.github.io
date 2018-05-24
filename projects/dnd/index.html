@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Recipe Manager - Parker Sprouse</title>
+    <title>DnD Companion App - Parker Sprouse</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Play">
@@ -53,8 +53,9 @@
               </ul>
               <h4>PROJECTS</h4>
               <ul>
-                <li><a href="/projects/rm.html" class="active"><span>Recipe Manager</span></a></li>
-                <li><a href="/projects/shareboard.html"><span>UNO Shareboard</span></a></li>
+                <li><a href="/projects/dnd" class="active"><span>DnD Companion App</span></a></li>
+                <li><a href="/projects/rm"><span>Recipe Manager</span></a></li>
+                <li><a href="/projects/shareboard"><span>UNO Shareboard</span></a></li>
               </ul>
               <h4>GAMES</h4>
               <ul>
@@ -68,31 +69,36 @@
 
           <!-- BEGIN MAIN CONTENT -->
           <div class="col-sm-10 section-right">
-            <h1 class="section-header">Recipe Manager</h1>
+            <h1 class="section-header">DnD Companion App</h1>
             <hr />
             <p>
-              The Recipe Manager is a project that I made for myself and my girlfriend.<br />
-              We wanted to start cooking together and naturally looked up a lot of recipes in the process.<br />
-              I realized that trying to keep track of all of these recipes across all of these different sites was rather unreliable.<br />
-              What if we lose the link? What if the recipe gets taken down for some reason?<br />
-              I had the idea to create a site where we could just copy all of the recipes that we find into our own online repository and access them at will.<br />
+              Every Sunday, myself and three friends play Dungeons & Dragons.<br />
+              We're going back and forth between multiple campaigns, each ran by a different member of the group.<br />
+              This means everyone has multiple characters to manage, which means multiple character sheets.<br />
+              During one session a while back, I had the idea of creating a digital version of the DnD
+              character sheet that we could use instead of dealing with stacks of paper that get worn down
+              over time and just become a hassle to deal with, as well as other utilities, such as filterable
+              detailed lists of all of the equipment and spells in the game, as well as the ability for the DM
+              to create a room for all players to join that will allow them to chat as a table, a group, or privately.<br />
               The primary technologies used are:
             </p>
             <span>Front-End:</span>
             <ul>
-              <li>Vue.js as the JS framework</li>
-              <li>Bulma as the CSS framework</li>
+              <li>React as the JS framework</li>
+              <li>Semantic UI's React version as the CSS framework</li>
+              <li>Blueprint.js as the React component library</li>
             </ul>
             <span>Back-End:</span>
             <ul>
               <li>Node.js with Express for the back-end engine</li>
-              <li>Postgres as our database</li>
+              <li>Postgres as the database</li>
+              <li>Sequelize as the way of interfacing with the database</li>
             </ul>
             <p>
               While the site was made for my personal use, it's open for anyone to make an account and use.
             </p>
             <p>
-              <a href="//recipes.parkersprouse.me">Give it a visit</a>
+              <a href="//dnd.parkersprouse.me">Give it a visit</a>
             </p>
           </div>
           <!-- END MAIN CONTENT -->
