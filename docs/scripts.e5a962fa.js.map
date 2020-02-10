@@ -1,1 +1,0 @@
-{"version":3,"sources":["scripts.js"],"names":["obj","console","log","goodbye","hello"],"mappings":";AACA,IAAA,EADMA,EAAM,GACZC,QAAQC,KAAIF,MAAAA,OAAAA,EAAYG,QAAZH,EAAAA,EAAKI,aAAOD,IAAAA,OAAAA,EAAAA,EAAAA,UAAW","file":"scripts.e5a962fa.js","sourceRoot":"..\\src","sourcesContent":["const obj = {};\nconsole.log(obj?.hello?.goodbye || 'nothing');\n"]}

@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "rm -rf docs && parcel build src/index.html --out-dir docs",
-    "dev": "parcel src/index.html --out-dir docs",
+    "dev": "rm -rf docs && parcel src/index.html --out-dir docs",
     "lint": "eslint --ext .js src/",
     "start": "npm run dev"
   },
