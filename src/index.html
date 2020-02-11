@@ -15,43 +15,45 @@
 
   <body>
     <section class='section section--about'>
-      <h1 class='section__header'>Parker Sprouse</h1>
-      <div class='section__body'>
+      <h1 class='section__header'>
+        <div class='container'>Parker Sprouse</div>
+      </h1>
+      <div class='section__body container'>
         <div>I am a software developer from New Orleans, LA.</div>
         <div>Most of the work I do is full-stack web development with a specialization in front-end development.</div>
         <div>I also like to play with game development as a hobby in my free time, but nothing significant has come of that (yet).</div>
 
-        <h2>General Development Experience</h2>
+        <h2 class='exp-section-header'>General Development Technologies</h2>
         <ul>
           <li>Java</li>
           <li>C#</li>
           <li>Python</li>
-          <li>Git Version Control</li>
+          <li><a href='https://git-scm.com/' target='_blank'>Git Version Control</a></li>
         </ul>
 
-        <h2>Web Development Experience</h2>
+        <h2 class='exp-section-header'>Web Development Technologies</h2>
         <ul>
           <li>HTML5</li>
           <li>
             CSS3
             <ul>
-              <li>SASS</li>
+              <li><a href='https://sass-lang.com/' target='_blank'>SCSS</a></li>
             </ul>
           </li>
           <li>
             ES6+ JavaScript (I do my best to keep up with modern JS features as they're standardized)
             <ul>
               <li>
-                Vue.js
+                <a href='https://vuejs.org/' target='_blank'>Vue.js</a>
                 <ul>
-                  <li>Vuex</li>
+                  <li><a href='https://vuex.vuejs.org/' target='_blank'>Vuex</a></li>
                 </ul>
               </li>
-              <li>React</li>
+              <li><a href='https://reactjs.org/' target='_blank'>React</a></li>
               <li>
-                Node.js
+                <a href='https://nodejs.org/en/' target='_blank'>Node.js</a>
                 <ul>
-                  <li>Express</li>
+                  <li><a href='https://expressjs.com/' target='_blank'>Express</a></li>
                 </ul>
               </li>
             </ul>
@@ -59,32 +61,59 @@
           <li>
             Ruby
             <ul>
-              <li>Ruby-on-Rails</li>
+              <li><a href='https://rubyonrails.org/' target='_blank'>Ruby-on-Rails</a></li>
             </ul>
           </li>
           <li>
-            Minor SQL knowledge
+            Light SQL knowledge
             <ul>
-              <li>Postgres</li>
-              <li>MySQL</li>
+              <li><a href='https://www.postgresql.org/' target='_blank'>Postgres</a></li>
+              <li><a href='https://www.mysql.com/' target='_blank'>MySQL</a></li>
             </ul>
           </li>
         </ul>
+        <h3 class='exp-subsection-header'>Envrionmental Tools</h3>
+        <ul>
+          <li><a href='https://babeljs.io/' target='_blank'>Babel</a></li>
+          <li><a href='https://eslint.org/' target='_blank'>ESLint</a></li>
+          <li><a href='https://parceljs.org/' target='_blank'>Parcel</a></li>
+          <li><a href='https://webpack.js.org/' target='_blank'>Webpack</a></li>
+          <li><a href='https://jestjs.io/' target='_blank'>Jest</a></li>
+        </ul>
 
-        <h2>Game Development Experience</h2>
+        <h2 class='exp-section-header'>Game Development Technologies</h2>
+        <ul>
+          <li><a href='https://unity.com/' target='_blank'>Unity (C#)</a></li>
+          <li>
+            <a href='http://www.monogame.net/' target='_blank'>MonoGame (C#)</a>
+            <ul>
+              <li><a href='https://github.com/prime31/Nez' target='_blank'>Nez</a></li>
+            </ul>
+          </li>
+          <li><a href='https://libgdx.badlogicgames.com/' target='_blank'>LibGDX (Java)</a></li>
+        </ul>
+        <h3 class='exp-subsection-header'>Beginning to Learn</h3>
+        <ul>
+          <li><a href='https://godotengine.org/' target='_blank'>Godot (GDScript)</a></li>
+          <li><a href='https://heaps.io/' target='_blank'>Heaps.io (Haxe)</a></li>
+        </ul>
       </div>
     </section>
 
     <section class='section section--projects'>
-      <h1 class='section__header'>Projects</h1>
-      <div class='section__body'>
+      <h1 class='section__header'>
+        <div class='container'>Projects</div>
+      </h1>
+      <div class='section__body container'>
 
       </div>
     </section>
 
     <section class='section section--contact'>
-      <h1 class='section__header'>Contact</h1>
-      <div class='section__body'>
+      <h1 class='section__header'>
+        <div class='container'>Contact</div>
+      </h1>
+      <div class='section__body container'>
         <div class='alert alert--error hidden'></div>
         <div class='alert alert--success hidden'>
           Message sent! I'll get back to you as soon as possible.
@@ -98,21 +127,23 @@
         </form>
 
         <h2>Socials</h2>
+        <a class='social-link' href='https://www.facebook.com/parker.sprouse' target='_blank' title='Facebook'>
+          <svg class='icon--fb' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+          </svg>
+        </a>
 
-        <svg class='icon--fb' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'>
-          <path d='M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z'>
-          </path>
-        </svg>
+        <a class='social-link' href='https://linkedin.com/in/parker-sprouse-78691753' target='_blank' title='LinkedIn'>
+          <svg class='icon--linkedin' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </a>
 
-        <svg class='icon--linkedin' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'>
-          <path d='M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z'>
-          </path>
-        </svg>
-
-        <svg class='icon--github' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'>
-          <path d='M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z'>
-          </path>
-        </svg>
+        <a class='social-link' href='https://github.com/parkersprouse' target='_blank' title='GitHub'>
+          <svg class='icon--github' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+        </a>
       </div>
     </section>
 
