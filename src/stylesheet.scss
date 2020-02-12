@@ -47,6 +47,19 @@ a {
   display: none;
 }
 
+.navbar {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  .vertical-divider {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    width: 1px;
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+}
+
 .alert {
   border: 1px solid black;
   border-left-width: 10px;
