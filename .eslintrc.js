@@ -15,6 +15,7 @@ module.exports = {
     'quote-props': 'off',
     'max-len': [2, { code: 100 }],
     'function-paren-newline': 'off',
+    'no-param-reassign': ['error', { props: false }],
   },
   parserOptions: {
     ecmaVersion: 2018,

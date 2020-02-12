@@ -7,6 +7,13 @@ import smoothscroll from 'smoothscroll-polyfill';
   document.querySelector('html').classList.remove('no-js');
   smoothscroll.polyfill();
 
+  document.querySelectorAll('.back-to-top').forEach((link) => {
+    link.onclick = (e) => {
+      e.preventDefault();
+      window.scroll({ top: 0, behavior: 'smooth' });
+    };
+  });
+
   document.querySelector('.navbar__skills-link').onclick = (e) => {
     e.preventDefault();
     document.querySelector('#skills').scrollIntoView({ behavior: 'smooth' });
