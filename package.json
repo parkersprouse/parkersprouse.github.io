@@ -18,5 +18,8 @@
     "eslint-plugin-import": "^2.20.1",
     "parcel-bundler": "^1.12.4",
     "sass": "^1.25.0"
+  },
+  "dependencies": {
+    "smoothscroll-polyfill": "^0.4.4"
   }
 }

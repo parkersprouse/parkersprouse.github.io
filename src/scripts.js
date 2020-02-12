@@ -1,8 +1,28 @@
 // Needed for parcel. Not entirely sure why, but
 // https://github.com/parcel-bundler/parcel/issues/1762#issuecomment-504389468
 import 'regenerator-runtime/runtime';
+import smoothscroll from 'smoothscroll-polyfill';
 
 (function onload() {
+  document.querySelector('html').classList.remove('no-js');
+  smoothscroll.polyfill();
+
+  document.querySelector('.navbar__skills-link').onclick = (e) => {
+    e.preventDefault();
+    document.querySelector('#skills').scrollIntoView({ behavior: 'smooth' });
+  };
+
+  document.querySelector('.navbar__projects-link').onclick = (e) => {
+    e.preventDefault();
+    document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
+  };
+
+  document.querySelector('.navbar__contact-link').onclick = (e) => {
+    e.preventDefault();
+    document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+  };
+
+  // Contact Form
   const contact_form = document.querySelector('.contact-form');
   const err_msg = document.querySelector('.alert--error');
   const success_msg = document.querySelector('.alert--success');
