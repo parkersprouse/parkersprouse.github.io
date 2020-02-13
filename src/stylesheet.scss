@@ -16,34 +16,6 @@ a {
   &:hover {
     color: rgba(255, 70, 70, 1);
   }
-
-  &.social-link {
-    color: inherit;
-    margin-right: 0.25rem;
-    text-decoration: none;
-
-    svg {
-      fill: currentColor;
-      height: 25px;
-      width: 25px;
-
-      path {
-        fill: currentColor;
-      }
-
-      &.icon--fb:hover {
-        color: #1877F2;
-      }
-
-      &.icon--linkedin:hover {
-        color: #0077B5;
-      }
-
-      &.icon--github:hover {
-        color: #ffffff;
-      }
-    }
-  }
 }
 
 .hidden, #hp {
@@ -174,11 +146,43 @@ a {
 
 .page-footer {
   background-color: black;
-  padding: 1rem 0 2rem 0;
+  padding: 2rem 1rem 4rem 1rem;
   width: 100%;
 
   h2 {
     margin-top: 0;
+  }
+
+  .social-links {
+    list-style-type: none;
+
+    li {
+      margin-bottom: 0.25rem;
+
+      a {
+        color: inherit;
+        margin-right: 0.25rem;
+        text-decoration: none;
+
+        &:hover {
+          color: white;
+        }
+
+        .social-link__label {
+          padding-left: 0.5rem;
+        }
+
+        svg {
+          fill: currentColor;
+          height: 25px;
+          width: 25px;
+
+          path {
+            fill: currentColor;
+          }
+        }
+      }
+    }
   }
 }
 
