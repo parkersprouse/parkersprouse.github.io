@@ -7,7 +7,6 @@ body {
   background-color: #21252B;
   color: rgb(157, 165, 167);
   font-family: 'Play', sans-serif;
-  margin-bottom: 5rem;
 }
 
 a {
@@ -139,7 +138,7 @@ a {
   .section__body {
     padding: 1rem;
 
-    .exp-section-header {
+    .section__body__subheader {
       border-top: 1px solid rgb(157, 165, 167);
       margin-top: 2rem;
       padding-top: 0.75rem;
@@ -170,6 +169,16 @@ a {
 
   button {
     margin-top: -1px;
+  }
+}
+
+.page-footer {
+  background-color: black;
+  padding: 1rem 0 2rem 0;
+  width: 100%;
+
+  h2 {
+    margin-top: 0;
   }
 }
 
