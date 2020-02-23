@@ -1,32 +1,34 @@
 // Needed for parcel. Not entirely sure why, but
 // https://github.com/parcel-bundler/parcel/issues/1762#issuecomment-504389468
 import 'regenerator-runtime/runtime';
-import smoothscroll from 'smoothscroll-polyfill';
+import MoveTo from 'moveto';
 
-(function onload() {
+document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('html').classList.remove('no-js');
-  smoothscroll.polyfill();
+
+  const moveTo = new MoveTo();
 
   document.querySelectorAll('.back-to-top').forEach((link) => {
     link.onclick = (e) => {
       e.preventDefault();
-      window.scroll({ top: 0, behavior: 'smooth' });
+      const y = window.pageYOffset || document.documentElement.scrollTop;
+      moveTo.move(-y);
     };
   });
 
   document.querySelector('.navbar__skills-link').onclick = (e) => {
     e.preventDefault();
-    document.querySelector('#skills').scrollIntoView({ behavior: 'smooth' });
+    moveTo.move(document.querySelector('#skills'));
   };
 
   document.querySelector('.navbar__projects-link').onclick = (e) => {
     e.preventDefault();
-    document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
+    moveTo.move(document.querySelector('#projects'));
   };
 
   document.querySelector('.navbar__contact-link').onclick = (e) => {
     e.preventDefault();
-    document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+    moveTo.move(document.querySelector('#contact'));
   };
 
   // Contact Form
@@ -43,8 +45,12 @@ import smoothscroll from 'smoothscroll-polyfill';
     const message = contact_form.querySelector('#message');
     const name = contact_form.querySelector('#name');
     const honeypot = contact_form.querySelector('#hp');
+    const submit = contact_form.querySelector('#submit');
 
-    const response = await fetch('http://localhost:9000/contact', {
+    submit.disabled = true;
+    submit.classList.add('loading');
+
+    const response = await fetch('http://api.parkersprouse.me/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -57,6 +63,9 @@ import smoothscroll from 'smoothscroll-polyfill';
       }),
     });
 
+    submit.disabled = false;
+    submit.classList.remove('loading');
+
     if (response.ok) {
       success_msg.classList.remove('hidden');
       email.value = '';
@@ -68,4 +77,4 @@ import smoothscroll from 'smoothscroll-polyfill';
       err_msg.classList.remove('hidden');
     }
   };
-}());
+});

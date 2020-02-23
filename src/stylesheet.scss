@@ -22,6 +22,14 @@ a {
   display: none;
 }
 
+.icon-left {
+  margin-right: 0.25rem;
+}
+
+.icon-right {
+  margin-left: 0.25rem;
+}
+
 .navbar {
   align-items: center;
   display: flex;
@@ -33,7 +41,7 @@ a {
     padding: 0;
     margin: 0 0.5rem;
 
-    &:after {
+    &::after {
       color: rgba(255, 255, 255, 0.3);
       content: '/';
     }
@@ -112,35 +120,111 @@ a {
 
     .section__body__subheader {
       border-top: 1px solid rgb(157, 165, 167);
+      color: rgb(200, 200, 200);
       margin-top: 2rem;
       padding-top: 0.75rem;
     }
+  }
+}
 
-    .exp-subsection-header {
-      margin-left: 1rem;
-    }
+.project-card {
+  &:not(:last-child) {
+    border-bottom: 1px solid rgb(157, 165, 167);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .project-card__header {
+    color: rgb(200, 200, 200);
+    margin-top: 0;
   }
 }
 
 .contact-form {
   margin-bottom: 1rem;
 
+  label {
+    display: block;
+    margin-bottom: 0.25rem;
+
+    &.required {
+      &::after {
+        color: rgba(255, 70, 70, 1);
+        content: '*';
+        padding-left: 0.25rem;
+      }
+    }
+  }
+
   input, textarea {
+    border: 1px solid rgb(100, 100, 100);
     display: block;
     width: 100%;
 
-    &:focus::placeholder {
-      color: rgba(255, 255, 255, 0.5);
-      opacity: 1;
+    &:focus {
+      border-color: rgb(150, 150, 150);
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+        opacity: 1;
+      }
     }
 
-    &:not(:first-child) {
-      margin-top: -1px;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
     }
   }
 
   button {
-    margin-top: -1px;
+    border: 1px solid rgb(100, 100, 100);
+
+    &:hover, &:focus {
+      border-color: rgb(150, 150, 150);
+      cursor: pointer;
+    }
+
+    &:active {
+      border-color: rgb(75, 75, 75);
+    }
+
+    &.loading {
+      color: transparent !important;
+      cursor: default;
+      opacity: 1;
+      pointer-events: auto;
+      position: relative;
+      text-shadow: none !important;
+      transition: all 0s linear, opacity .1s ease;
+
+      &::after {
+        animation: button-spin .6s linear;
+        animation-iteration-count: infinite;
+        border-color: white transparent transparent;
+        border-radius: 500rem;
+        border-style: solid;
+        border-width: .2em;
+        box-shadow: 0px 0px 0px 1px transparent;
+        content: '';
+        height: 1.28571429em;
+        left: 50%;
+        margin: -.64285714em 0 0 -.64285714em;
+        position: absolute;
+        top: 50%;
+        width: 1.28571429em;
+      }
+
+      &::before {
+        border: .2em solid rgba(0, 0, 0, .15);
+        border-radius: 500rem;
+        content: '';
+        height: 1.28571429em;
+        left: 50%;
+        margin: -.64285714em 0 0 -.64285714em;
+        position: absolute;
+        top: 50%;
+        width: 1.28571429em;
+      }
+    }
   }
 }
 
@@ -215,5 +299,16 @@ a {
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
+  }
+}
+
+// Animations
+
+@keyframes button-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
