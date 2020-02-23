@@ -8,7 +8,7 @@ html {
   }
 
   &:not(.no-js) {
-    .email-display {
+    .no-js-contact-message {
       display: none;
     }
   }
@@ -240,7 +240,7 @@ a {
   }
 }
 
-.email-display {
+.no-js-contact-message {
   margin-bottom: 1rem;
 }
 
