@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     submit.disabled = true;
     submit.classList.add('loading');
 
-    const response = await fetch('http://api.parkersprouse.me/contact', {
+    const response = await fetch('https://api.parkersprouse.me/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
