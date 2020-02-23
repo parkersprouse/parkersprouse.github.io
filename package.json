@@ -2,6 +2,10 @@
   "name": "parkersprouse.github.io",
   "private": true,
   "version": "1.0.0",
+  "engines": {
+    "node": "12.16.1",
+    "npm": "6.13.4"
+  },
   "scripts": {
     "build": "rm -rf docs && parcel build src/index.html --out-dir docs",
     "dev": "rm -rf docs && parcel src/index.html --out-dir docs",

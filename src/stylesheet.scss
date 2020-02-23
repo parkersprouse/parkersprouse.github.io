@@ -1,5 +1,17 @@
-html.no-js {
-  scroll-behavior: smooth;
+html {
+  &.no-js {
+    scroll-behavior: smooth;
+
+    .contact-form {
+      display: none;
+    }
+  }
+
+  &:not(.no-js) {
+    .email-display {
+      display: none;
+    }
+  }
 }
 
 html,
@@ -226,6 +238,10 @@ a {
       }
     }
   }
+}
+
+.email-display {
+  margin-bottom: 1rem;
 }
 
 .page-footer {
