@@ -28,6 +28,17 @@ a {
   &:hover {
     color: rgba(255, 70, 70, 1);
   }
+
+  &.icon-link {
+    &::before {
+      background: url('./icon_link.svg') center center no-repeat;
+      content: '';
+      display: inline-block;
+      height: 13px;
+      margin-right: 0.5rem;
+      width: 13px;
+    }
+  }
 }
 
 .hidden, #hp {
