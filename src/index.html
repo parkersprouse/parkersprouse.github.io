@@ -10,7 +10,7 @@
     <link href='https://unpkg.com/sanitize.css' rel='stylesheet' type='text/css' />
     <link href='https://unpkg.com/sanitize.css/forms.css' rel='stylesheet' type='text/css' />
     <link href='https://unpkg.com/sanitize.css/typography.css' rel='stylesheet' type='text/css' />
-    <link href='https://fonts.googleapis.com/css?family=Play' rel='stylesheet' />
+    <link href='https://fonts.googleapis.com/css?family=Play&display=swap' rel='stylesheet preload' />
     <link href='stylesheet.scss' rel='stylesheet' type='text/css' />
   </head>
 
@@ -28,7 +28,8 @@
         <div class='container'>
           <span>Parker Sprouse</span>
           <span>
-            <a class='back-to-top' href='#' name='skills-to-top'>
+            <a class='back-to-top' href='#'>
+              <span class='sr-only'>Back to Top</span>
               <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 512 512'>
                 <path d='M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z'></path>
               </svg>
@@ -131,7 +132,8 @@
         <div class='container'>
           <span>Projects</span>
           <span>
-            <a class='back-to-top' href='#' name='projects-to-top'>
+            <a class='back-to-top' href='#'>
+              <span class='sr-only'>Back to Top</span>
               <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 512 512'>
                 <path d='M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z'></path>
               </svg>
@@ -269,7 +271,8 @@
         <div class='container'>
           <span>Contact</span>
           <span>
-            <a class='back-to-top' href='#' name='contact-to-top'>
+            <a class='back-to-top' href='#'>
+              <span class='sr-only'>Back to Top</span>
               <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 512 512'>
                 <path d='M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z'></path>
               </svg>
@@ -283,13 +286,13 @@
           Message sent! I'll get back to you as soon as possible.
         </div>
         <form class='contact-form'>
-          <label>Name</label>
+          <label for='name'>Name</label>
           <input id='name' placeholder='Name' type='text' />
 
-          <label class='required'>E-mail</label>
+          <label class='required' for='email'>E-mail</label>
           <input id='email' placeholder='E-mail' type='email' />
 
-          <label class='required'>Message</label>
+          <label class='required' for='message'>Message</label>
           <textarea id='message' placeholder='Message'></textarea>
 
           <input id='hp' type='text' />
