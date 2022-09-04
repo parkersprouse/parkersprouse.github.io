@@ -7,7 +7,7 @@
     "npm": "6.13.4"
   },
   "scripts": {
-    "build": "rm -rf docs && parcel build src/index.html --out-dir docs",
+    "build": "rm -rf docs && parcel build src/index.html --no-cache --out-dir docs && cp CNAME docs/CNAME",
     "dev": "rm -rf docs && parcel src/index.html --out-dir docs",
     "lint": "eslint --ext .js src/",
     "start": "npm run dev"
