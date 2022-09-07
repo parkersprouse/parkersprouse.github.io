@@ -1,0 +1,105 @@
+@use '~/node_modules/nord/src/sass/nord.scss';
+@import '~/node_modules/sanitize.css/forms.css';
+@import '~/node_modules/sanitize.css/sanitize.css';
+@import '~/node_modules/sanitize.css/typography.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
+
+* {
+  text-rendering: optimizeLegibility;
+  transition: all 0.35s;
+}
+
+html, body {
+  min-height: 100%;
+  min-height: 100vh;
+  font-size: 16px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 400;
+}
+
+h1, h2 {
+  margin-bottom: 1.5rem;
+}
+
+.synopsis {
+  margin-bottom: 1.5rem;
+}
+
+.page-container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: 'Rampart One', cursive;
+  font-size: 4rem;
+  margin: 0;
+}
+
+a {
+  color: #000000;
+
+  &:hover {
+    color: #FF0000;
+  }
+
+  &.with-icon {
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+
+    span {
+      text-decoration: underline;
+    }
+  }
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 2rem;
+  margin-bottom: 0;
+
+  &.blank-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  ul {
+    padding-left: 2rem;
+    list-style-type: '+';
+
+    li {
+      padding-left: 0.25rem;
+    }
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.list-container {
+  border: 1px solid #000000;
+  box-shadow: 6px 6px #000000;
+  padding: 1rem;
+
+  > .header {
+    display: block;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 0.25rem;
+  }
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 0;
+  right: 1rem;
+}

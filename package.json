@@ -14,15 +14,22 @@
     }
   },
   "scripts": {
-    "build": "rm -rf docs && parcel build",
+    "build": "rm -rf docs && parcel build && cp CNAME docs/CNAME",
     "dev": "rm -rf docs && parcel",
     "lint": "eslint --ext .js src/",
     "start": "npm run dev"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.13",
+    "@babel/preset-env": "^7.18.10",
+    "@parcel/transformer-sass": "^2.7.0",
     "eslint": "^8.23.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
     "parcel": "^2.7.0"
+  },
+  "dependencies": {
+    "nord": "^0.2.1",
+    "sanitize.css": "^13.0.0"
   }
 }
