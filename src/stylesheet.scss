@@ -6,6 +6,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
 
+$breakpoint_width: 767px;
+
+.light {
+  background-color: #FFFFFF;
+  color: #000000;
+
+  a {
+    color: #000000;
+  }
+
+  .list-container {
+    border: 1px solid #000000;
+    box-shadow: 6px 6px #000000;
+
+    > .header {
+      border-bottom: 1px solid #000000;
+    }
+  }
+}
+
+.dark {
+  background-color: #242933;
+  color: #818da1;
+
+  a {
+    color: #818da1;
+  }
+
+  .list-container {
+    border: 1px solid #404651;
+    box-shadow: 6px 6px #404651;
+
+    > .header {
+      border-bottom: 1px solid #404651;
+    }
+  }
+}
+
+
+
 * {
   text-rendering: optimizeLegibility;
   transition: all 0.35s;
@@ -30,17 +70,23 @@ h1, h2 {
 .page-container {
   width: 60%;
   margin: 0 auto;
+
+  @media screen and (max-width: $breakpoint_width) {
+    width: 90%;
+  }
 }
 
 .title {
   font-family: 'Rampart One', cursive;
   font-size: 4rem;
   margin: 0;
+
+  @media screen and (max-width: $breakpoint_width) {
+    font-size: 3rem;
+  }
 }
 
 a {
-  color: #000000;
-
   &:hover {
     color: #FF0000;
   }
@@ -87,19 +133,21 @@ ul {
 }
 
 .list-container {
-  border: 1px solid #000000;
-  box-shadow: 6px 6px #000000;
   padding: 1rem;
+
+  @media screen and (max-width: $breakpoint_width) {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
 
   > .header {
     display: block;
-    border-bottom: 1px solid #000000;
     padding-bottom: 0.25rem;
   }
 }
 
 .theme-toggle {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 1rem;
 }
