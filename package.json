@@ -10,12 +10,12 @@
   "source": "src/index.html",
   "targets": {
     "default": {
-      "distDir": "./docs"
+      "distDir": "./dist"
     }
   },
   "scripts": {
-    "build": "rm -rf docs && parcel build && cp CNAME docs/CNAME",
-    "dev": "rm -rf docs && parcel",
+    "build": "rm -rf dist && parcel build && cp CNAME dist/CNAME",
+    "dev": "rm -rf dist && parcel",
     "lint": "eslint --ext .js src/",
     "start": "npm run dev"
   },
@@ -29,7 +29,6 @@
     "parcel": "^2.7.0"
   },
   "dependencies": {
-    "nord": "^0.2.1",
     "sanitize.css": "^13.0.0"
   }
 }
