@@ -8,7 +8,25 @@
 
 $breakpoint_width: 767px;
 
-.light {
+@mixin dark-theme() {
+  background-color: #191b1d;
+  color: #a9a9a9;
+
+  a {
+    color: #a9a9a9;
+  }
+
+  .list-container {
+    border: 1px solid #a9a9a9;
+    box-shadow: 6px 6px #a9a9a9;
+
+    > .header {
+      border-bottom: 1px solid #a9a9a9;
+    }
+  }
+}
+
+@mixin light-theme() {
   background-color: #FFFFFF;
   color: #000000;
 
@@ -26,29 +44,36 @@ $breakpoint_width: 767px;
   }
 }
 
-.dark {
-  background-color: #242933;
-  color: #818da1;
+body {
+  @include light-theme;
+}
 
-  a {
-    color: #818da1;
-  }
-
-  .list-container {
-    border: 1px solid #404651;
-    box-shadow: 6px 6px #404651;
-
-    > .header {
-      border-bottom: 1px solid #404651;
-    }
+@media (prefers-color-scheme: dark) {
+  body {
+    @include dark-theme;
   }
 }
 
+.light {
+  @include light-theme;
+}
 
+.dark {
+  @include dark-theme;
+}
+
+
+/*
+ * -----------------------------------------------------------------
+ * Page structure, which won't be impacted by preferred color scheme
+ */
 
 * {
   text-rendering: optimizeLegibility;
-  transition: all 0.35s;
+  // I want to include transitions for a bit of pop, but it causes the screen to flash when
+  // the saved theme does not match the preferred theme. So until I figure that out, I'm
+  // just gonna disable transitions.
+  // transition: all 0.35s;
 }
 
 html, body {
@@ -87,20 +112,17 @@ h1, h2 {
 }
 
 a {
+  text-decoration: none;
+
   &:hover {
     color: #FF0000;
   }
 
   &.with-icon {
-    text-decoration: none;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 0.5rem;
-
-    span {
-      text-decoration: underline;
-    }
   }
 }
 
@@ -118,8 +140,21 @@ ul {
     padding-left: 2rem;
     list-style-type: '+';
 
-    li {
-      padding-left: 0.25rem;
+    &.blank-list {
+      padding-left: 2rem;
+      list-style-type: none;
+
+      li {
+        a.with-icon {
+          gap: 0.25rem;
+        }
+      }
+    }
+
+    &:not(.blank-list) {
+      li {
+        padding-left: 0.25rem;
+      }
     }
   }
 }
