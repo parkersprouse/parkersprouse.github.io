@@ -2,28 +2,33 @@
   "name": "parkersprouse.github.io",
   "private": true,
   "version": "1.0.0",
+  "browserslist": "> 1%, last 2 versions, not dead",
   "engines": {
-    "node": "12.16.1",
-    "npm": "6.13.4"
+    "node": "16.17.0",
+    "npm": "8.15.0"
+  },
+  "source": "src/index.html",
+  "targets": {
+    "default": {
+      "distDir": "./dist"
+    }
   },
   "scripts": {
-    "build": "rm -rf docs && parcel build src/index.html --no-cache --out-dir docs && cp CNAME docs/CNAME",
-    "dev": "rm -rf docs && parcel src/index.html --out-dir docs",
+    "build": "rm -rf dist && parcel build && cp CNAME dist/CNAME",
+    "dev": "rm -rf dist && parcel",
     "lint": "eslint --ext .js src/",
     "start": "npm run dev"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
-    "autoprefixer": "^9.7.4",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.20.1",
-    "parcel-bundler": "^1.12.4",
-    "sass": "^1.25.0"
+    "@babel/core": "^7.18.13",
+    "@babel/preset-env": "^7.18.10",
+    "@parcel/transformer-sass": "^2.7.0",
+    "eslint": "^8.23.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "parcel": "^2.7.0"
   },
   "dependencies": {
-    "moveto": "^1.8.2"
+    "sanitize.css": "^13.0.0"
   }
 }

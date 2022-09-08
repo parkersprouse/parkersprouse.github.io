@@ -44,7 +44,7 @@ jobs:
       - name: Capture Build Artifacts
         uses: actions/upload-artifact@v2
         with:
-          path: ${{ github.workspace }}/docs
+          path: ${{ github.workspace }}/dist
           if-no-files-found: error
 
       # STEP 4 #
@@ -53,8 +53,8 @@ jobs:
         with:
           branch: deployed
           # This folder is the folder the artifacts are in that we will use to deploy the site
-          folder: ${{ github.workspace }}/docs
+          folder: ${{ github.workspace }}/dist
           # This is the folder we want to put the deployed files in. Defaults to root directory
-          # target-folder: 
+          # target-folder:
           # If you need to customize the commit message
           commit-message: Deploying built app to Pages
