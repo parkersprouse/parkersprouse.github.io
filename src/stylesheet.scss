@@ -8,19 +8,19 @@
 $breakpoint_width: 767px;
 
 @mixin dark-theme() {
-  background-color: #191b1d;
-  color: #a9a9a9;
+  background-color: rgb(30, 41, 59);
+  color: rgb(203, 213, 225);
 
   a {
-    color: #a9a9a9;
+    color: rgb(203, 213, 225);
   }
 
   .list-container {
-    border: 1px solid #a9a9a9;
-    box-shadow: 6px 6px #a9a9a9;
+    border: 1px solid rgb(203, 213, 225);
+    box-shadow: 6px 6px rgb(203, 213, 225);
 
     > .header {
-      border-bottom: 1px solid #a9a9a9;
+      border-bottom: 1px solid rgb(203, 213, 225);
     }
   }
 }
