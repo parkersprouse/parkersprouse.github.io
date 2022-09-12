@@ -20,7 +20,7 @@
     "start": "npm run dev"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.13",
+    "@babel/core": "^7.19.0",
     "@babel/preset-env": "^7.18.10",
     "@parcel/transformer-sass": "^2.7.0",
     "eslint": "^8.23.0",
