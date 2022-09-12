@@ -2,10 +2,31 @@
 @import '~/node_modules/sanitize.css/sanitize.css';
 @import '~/node_modules/sanitize.css/typography.css';
 
-@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
-
 $breakpoint_width: 767px;
+
+@font-face {
+  font-family: 'Rampart One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/RampartOne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('./fonts/RobotoMono-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/RobotoMono-Regular.ttf') format('truetype');
+}
 
 @mixin dark-theme() {
   background-color: rgb(30, 41, 59);
@@ -163,10 +184,11 @@ ul {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: 1.5rem;
 }
 
 .list-container {
+  flex: 1;
   padding: 1rem;
 
   @media screen and (max-width: $breakpoint_width) {
