@@ -2,7 +2,7 @@
   "name": "parkersprouse.github.io",
   "private": true,
   "version": "1.0.0",
-  "browserslist": "> 1%, last 2 versions, not dead",
+  "browserslist": "defaults",
   "engines": {
     "node": "16.17.0",
     "pnpm": "7.11.0"
@@ -22,6 +22,9 @@
   "devDependencies": {
     "@babel/core": "^7.18.13",
     "@babel/preset-env": "^7.18.10",
+    "@parcel/compressor-brotli": "^2.7.0",
+    "@parcel/compressor-gzip": "^2.7.0",
+    "@parcel/config-default": "^2.7.0",
     "@parcel/core": ">=2.7.0 <3.0.0",
     "@parcel/transformer-sass": "^2.7.0",
     "eslint": "^8.23.0",
