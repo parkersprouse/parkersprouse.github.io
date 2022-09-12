@@ -9,7 +9,7 @@ $breakpoint_width: 767px;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('./fonts/RampartOne-Regular.ttf') format('truetype');
+  src: url('./fonts/RampartOne-Regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -17,7 +17,7 @@ $breakpoint_width: 767px;
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('./fonts/RobotoMono-Light.ttf') format('truetype');
+  src: url('./fonts/RobotoMono-Light.woff2') format('woff2');
 }
 
 @font-face {
@@ -25,7 +25,7 @@ $breakpoint_width: 767px;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('./fonts/RobotoMono-Regular.ttf') format('truetype');
+  src: url('./fonts/RobotoMono-Regular.woff2') format('woff2');
 }
 
 @mixin dark-theme() {
