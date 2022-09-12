@@ -5,7 +5,7 @@
   "browserslist": "> 1%, last 2 versions, not dead",
   "engines": {
     "node": "16.17.0",
-    "npm": "8.15.0"
+    "pnpm": "7.11.0"
   },
   "source": "src/index.html",
   "targets": {
@@ -17,11 +17,12 @@
     "build": "rm -rf dist && parcel build && cp CNAME dist/CNAME",
     "dev": "rm -rf dist && parcel",
     "lint": "eslint --ext .js src/",
-    "start": "npm run dev"
+    "start": "pnpm run dev"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
     "@babel/preset-env": "^7.18.10",
+    "@parcel/core": ">=2.7.0 <3.0.0",
     "@parcel/transformer-sass": "^2.7.0",
     "eslint": "^8.23.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -30,5 +31,8 @@
   },
   "dependencies": {
     "sanitize.css": "^13.0.0"
+  },
+  "peerDependencies": {
+    "@parcel/core": ">=2.7.0 <3.0.0"
   }
 }
