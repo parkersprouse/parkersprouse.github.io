@@ -35,19 +35,25 @@ jobs:
           # cache-dependency-path: '**/package-lock.json'
 
       # STEP 2 #
-      - name: Build Site
-        run: |
-          npm ci
-          npm run build
+      - name: Install PNPM
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.11.0
 
       # STEP 3 #
+      - name: Build Site
+        run: |
+          pnpm install
+          pnpm run build
+
+      # STEP 4 #
       - name: Capture Build Artifacts
         uses: actions/upload-artifact@v2
         with:
           path: ${{ github.workspace }}/dist
           if-no-files-found: error
 
-      # STEP 4 #
+      # STEP 5 #
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
