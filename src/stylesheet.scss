@@ -194,6 +194,7 @@ ul {
   @media screen and (max-width: $breakpoint_width) {
     margin-bottom: 1rem;
     width: 100%;
+    flex-basis: 100%;
   }
 
   > .header {
