@@ -68,11 +68,11 @@ body {
   @include light-theme;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    @include dark-theme;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   body {
+//     @include dark-theme;
+//   }
+// }
 
 .light {
   @include light-theme;
@@ -122,7 +122,7 @@ h1, h2 {
 }
 
 .title {
-  font-family: 'Rampart One', cursive;
+  font-family: 'Rampart One', sans-serif;
   font-size: 4rem;
   margin: 0;
 

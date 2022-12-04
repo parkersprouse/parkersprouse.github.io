@@ -1,3 +1,8 @@
+/*
+ * See comment in HTML for explanation on why this is disabled.
+ */
+
+/*
 const Themes = Object.freeze({
   Dark: 'dark',
   Light: 'light',
@@ -36,3 +41,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   toggle_container.style.display = 'initial';
 });
+*/
