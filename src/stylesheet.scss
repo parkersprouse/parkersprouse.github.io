@@ -4,30 +4,6 @@
 
 $breakpoint_width: 767px;
 
-@font-face {
-  font-family: 'Rampart One';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('./fonts/RampartOne-Regular.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Roboto Mono';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url('./fonts/RobotoMono-Light.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Roboto Mono';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('./fonts/RobotoMono-Regular.woff2') format('woff2');
-}
-
 @mixin dark-theme() {
   background-color: rgb(30, 41, 59);
   color: rgb(203, 213, 225);
