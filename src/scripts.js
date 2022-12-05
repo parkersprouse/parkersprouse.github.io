@@ -1,3 +1,23 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const title = document.querySelector('.title');
+
+  const calculateFontScale = (el) => {
+    if (el?.style !== undefined) el.style.fontSize = `${el.offsetWidth * 0.75}%`;
+    return el;
+  };
+
+  const resizeHandler = () => {
+    if (window.innerWidth < 768) {
+      if (title) calculateFontScale(title);
+    } else {
+      title.style.fontSize = null;
+    }
+  };
+
+  window.addEventListener('resize', resizeHandler);
+  resizeHandler();
+});
+
 /*
  * See comment in HTML for explanation on why this is disabled.
  */
@@ -41,4 +61,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   toggle_container.style.display = 'initial';
 });
+*/
+
+/*
+function getDefaultFontSize() {
+  const element = document.createElement('div');
+  element.style.width = '1rem';
+  element.style.display = 'none';
+  document.body.append(element);
+
+  const widthMatch = window.getComputedStyle(element).getPropertyValue('width').match(/\d+/);
+  element.remove();
+
+  if (!widthMatch || widthMatch.length < 1) return null;
+
+  const result = Number(widthMatch[0]);
+  return Number.isNaN(result) ? null : result;
+}
 */
