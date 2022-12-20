@@ -89,7 +89,7 @@ h1, h2 {
 }
 
 .page-container {
-  width: 60%;
+  width: 65%;
   margin: 0 auto;
 
   @media screen and (max-width: $breakpoint_width) {
@@ -161,6 +161,10 @@ ul {
   justify-content: space-between;
   align-items: flex-start;
   gap: 1.5rem;
+
+  @media screen and (max-width: $breakpoint_width) {
+    gap: 0.5rem;
+  }
 }
 
 .list-container {
