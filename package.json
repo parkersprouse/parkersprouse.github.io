@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "browserslist": "defaults",
   "engines": {
-    "node": "16.17.0",
-    "pnpm": "~7.18.0"
+    "node": "^18.12.1",
+    "pnpm": "^7.22.0"
   },
   "source": "src/index.html",
   "targets": {
@@ -20,17 +20,17 @@
     "start": "pnpm run dev"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.5",
+    "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
-    "@parcel/compressor-brotli": "^2.8.0",
-    "@parcel/compressor-gzip": "^2.8.0",
-    "@parcel/config-default": "^2.8.0",
-    "@parcel/core": "^2.8.0",
-    "@parcel/transformer-sass": "^2.8.0",
-    "eslint": "^8.29.0",
+    "@parcel/compressor-brotli": "^2.8.2",
+    "@parcel/compressor-gzip": "^2.8.2",
+    "@parcel/config-default": "^2.8.2",
+    "@parcel/core": "^2.8.2",
+    "@parcel/transformer-sass": "^2.8.2",
+    "eslint": "^8.31.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "parcel": "^2.8.0"
+    "parcel": "^2.8.2"
   },
   "dependencies": {
     "sanitize.css": "^13.0.0"

@@ -1,3 +1,7 @@
+/**
+ * Set up a window resize listener that adjusts the page header's font size to fit the width of the
+ * page if the header is too big.
+ */
 document.addEventListener('DOMContentLoaded', () => {
   const title = document.querySelector('.title');
 
