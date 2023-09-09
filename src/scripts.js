@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.innerWidth < 768) {
       if (title) calculateFontScale(title);
     } else {
-      title.style.fontSize = null;
+      title.style.fontSize = undefined;
     }
   };
 
