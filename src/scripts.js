@@ -19,7 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.addEventListener('resize', resizeHandler);
-  resizeHandler();
+  //resizeHandler();
+
+  new ResizeObserver((entries) => {
+    for (const entry of entries) {
+      console.log(entry);
+    }
+  }).observe(window);
 });
 
 /*

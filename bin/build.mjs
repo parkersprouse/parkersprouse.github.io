@@ -1,7 +1,7 @@
 import autoprefixer from 'autoprefixer';
 import postcss from 'postcss';
 import postcssPresetEnv from 'postcss-preset-env';
-import { readFile } from 'node:fs/promises';
+import { readFile, rm } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { build } from 'esbuild';
@@ -14,6 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const __root_dir = resolve(__dirname, '..', 'src');
 const __src_dir = join(__root_dir, 'src');
 const css_input = join(__src_dir, 'styles.css');
+const __dist_dir = join(__root_dir, 'dist');
 
 const shared_config = {
   bundle: true,
@@ -32,6 +33,13 @@ const shared_config = {
   ],
   write: true,
 };
+
+
+/**
+ * [Step 1] Clean Old Files
+ */
+console.log('[Step 1] Clean Old Files');
+await rm(__dist_dir, { recursive: true, force: true });
 
 /**
  * [Step 1] PostCSS
