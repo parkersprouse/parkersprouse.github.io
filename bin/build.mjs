@@ -11,7 +11,7 @@ import { build } from 'esbuild';
  * Configuration
  */
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const __root_dir = resolve(__dirname, '..', 'src');
+const __root_dir = resolve(__dirname, '..');
 const __src_dir = join(__root_dir, 'src');
 const css_input = join(__src_dir, 'styles.css');
 const __dist_dir = join(__root_dir, 'dist');
@@ -41,7 +41,7 @@ console.log('[Step 1] Clean Old Files');
 // await rm(__dist_dir, { recursive: true, force: true });
 const old_files = await readdir(__dist_dir, { withFileTypes: true });
 for (const entry of old_files) {
-  if (entry.isDirectory() || entry.isSymbolicLink() || entry.name.endsWith('.html')) continue;
+  if (entry.isDirectory() || entry.isSymbolicLink() || entry.name.endsWith('.html') || entry.name === 'CNAME') continue;
   const file_path = join(__dist_dir, entry.name);
   console.log(`Cleaning ${file_path}`);
   await rm(file_path, { force: true });

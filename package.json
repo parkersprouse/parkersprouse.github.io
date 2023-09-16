@@ -8,15 +8,12 @@
     "pnpm": "^8"
   },
   "scripts": {
-    "old_build": "rm -rf dist && parcel build && cp CNAME dist/CNAME",
-    "old_dev": "rm -rf dist && parcel",
-    "------------------": "------------------",
     "build": "node ./bin/build.mjs",
     "lint:css": "stylelint src/*.css",
     "lint:css:fix": "stylelint --fix src/*.css",
     "lint:js": "eslint --ext .js src/",
     "lint:js:fix": "eslint --fix --ext .js src/",
-    "start": "pnpm run dev"
+    "start": "pnpm run build && esbuild --servedir=dist"
   },
   "dependencies": {
     "@fontsource/inter": "^5.0.8",

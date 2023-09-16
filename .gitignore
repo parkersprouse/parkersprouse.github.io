@@ -1,3 +1,4 @@
+dist/**/*
 !dist/*.html
 docs
 node_modules
