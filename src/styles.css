@@ -36,6 +36,11 @@
   --text-color: rgb(203, 213, 225);
 }
 
+::selection {
+  color: var(--bg-color);
+  background-color: var(--text-color);
+}
+
 * {
   text-rendering: optimizeLegibility;
   /*
