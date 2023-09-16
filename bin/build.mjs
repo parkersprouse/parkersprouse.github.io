@@ -2,7 +2,7 @@ import autoprefixer from 'autoprefixer';
 import postcss from 'postcss';
 import postcssPresetEnv from 'postcss-preset-env';
 import { createHash } from 'node:crypto';
-import { copyFile, readFile, rm } from 'node:fs/promises';
+import { copyFile, readFile, rm, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { build } from 'esbuild';
@@ -17,18 +17,6 @@ try {
   const __dist_dir = join(__root_dir, 'dist');
   const css_input = join(__src_dir, 'styles.css');
   const js_input = join(__src_dir, 'scripts.js');
-
-  const css_buffer = await readFile(css_input);
-  const css_hash = createHash('sha256');
-  css_hash.update(css_buffer);
-  const css_fingerprint = css_hash.digest('hex');
-  const hashed_css = `styles.${css_fingerprint}.css`;
-
-  const js_buffer = await readFile(js_input);
-  const js_hash = createHash('sha256');
-  js_hash.update(js_buffer);
-  const js_fingerprint = js_hash.digest('hex');
-  // const hashed_js = `scripts.${js_fingerprint}.js`;
 
   const shared_config = {
     bundle: true,
@@ -65,6 +53,9 @@ try {
    * [Step 3] esbuild - CSS
    */
   console.log('[Step 3] esbuild - CSS');
+  const css_buffer = await readFile(css_input);
+  const css_fingerprint = createHash('sha256').update(css_buffer).digest('hex');
+  const hashed_css = `styles.${css_fingerprint}.css`;
   await build({
     ...shared_config,
     outfile: join(__dist_dir, hashed_css),
@@ -80,6 +71,8 @@ try {
    * [Step 4] esbuild - JS
    */
   console.log('[Step 4] esbuild - JS');
+  const js_buffer = await readFile(js_input);
+  const js_fingerprint = createHash('sha256').update(js_buffer).digest('hex');
   await build({
     ...shared_config,
     entryNames: `[name].${js_fingerprint}`,
@@ -92,17 +85,24 @@ try {
   /**
    * [Step 5] Copy Static Files
    */
+  const hashed_resume = `Parker_Sprouse_Resume.${Date.now()}.pdf`;
+  await copyFile(
+    join(__src_dir, 'Parker_Sprouse_Resume.pdf'),
+    join(__dist_dir, hashed_resume),
+  );
   await copyFile(
     join(__src_dir, 'CNAME'),
     join(__dist_dir, 'CNAME'),
   );
-  await copyFile(
-    join(__src_dir, 'index.html'),
+
+  const src_html_contents = await readFile(join(__src_dir, 'index.html'), 'utf8');
+  await writeFile(
     join(__dist_dir, 'index.html'),
-  );
-  await copyFile(
-    join(__src_dir, 'Parker_Sprouse_Resume.pdf'),
-    join(__dist_dir, 'Parker_Sprouse_Resume.pdf'),
+    src_html_contents
+      .replace(/<%{RESUME_FILE}%>/g, hashed_resume)
+      .replace(/<%{SCRIPTS_FILE}%>/g, js_fingerprint)
+      .replace(/<%{STYLES_FILE}%>/g, css_fingerprint),
+    'utf8',
   );
 } catch (e) {
   console.error('Build script failed to complete:');
