@@ -1,0 +1,193 @@
+@import url('sanitize.css/sanitize.css');
+@import url('sanitize.css/forms.css');
+@import url('sanitize.css/typography.css');
+@import url('@fontsource/inter/index.css');
+@import url('@fontsource/rampart-one/index.css');
+
+/*
+ * Example Usage:
+ *
+ * @media (--desktop) {
+ *   // styles that will only apply to desktop sizes
+ * }
+ *
+ * @media (--mobile) {
+ *   // styles that will only apply to mobile sizes
+ * }
+ */
+@custom-media --mobile (width <= var(--breakpoint-width));
+@custom-media --desktop (width > var(--breakpoint-width));
+
+:root {
+  --bg-color: #FFFFFF;
+  --border-color: #000000;
+  --box-shadow-color: #000000;
+  --breakpoint-width: 767px;
+  --link-color: #000000;
+  --link-hover-color: #FF0000;
+  --text-color: #000000;
+}
+
+.dark {
+  --bg-color: rgb(30, 41, 59);
+  --border-color: rgb(203, 213, 225);
+  --box-shadow-color: rgb(203, 213, 225);
+  --link-color: rgb(203, 213, 225);
+  --text-color: rgb(203, 213, 225);
+}
+
+::selection {
+  color: var(--bg-color);
+  background-color: var(--text-color);
+}
+
+* {
+  text-rendering: optimizeLegibility;
+  /*
+   * I want to include transitions for a bit of pop, but it causes the screen to flash when
+   * the saved theme does not match the preferred theme. So until I figure that out, I'm
+   * just gonna disable transitions.
+   * UPDATE: with the dark mode disabled, we can re-enable this for now
+   */
+  transition: all 0.15s ease;
+}
+
+html, body {
+  min-height: 100%;
+  min-height: 100vh;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding-bottom: 2rem;
+
+  & a {
+    color: var(--link-color);
+  }
+
+  & .list-container {
+    border: 1px solid var(--border-color);
+    box-shadow: 6px 6px var(--box-shadow-color);
+
+    & > .header {
+      border-bottom: 1px solid var(--border-color);
+    }
+  }
+}
+
+h1, h2 {
+  margin-bottom: 1.5rem;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+.synopsis {
+  margin-bottom: 1.5rem;
+}
+
+.page-container {
+  width: 75%;
+  margin: 0 auto;
+
+  @media (--mobile) {
+    width: 90%;
+  }
+}
+
+.title {
+  font-family: 'Rampart One', sans-serif;
+  font-size: 4rem;
+  margin: 0;
+
+  @media (--mobile) {
+    font-size: 3rem;
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    color: var(--link-hover-color);
+  }
+
+  &.with-icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 2rem;
+  margin-bottom: 0;
+
+  &.blank-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  & ul {
+    padding-left: 2rem;
+    list-style-type: '+';
+
+    &.blank-list {
+      padding-left: 2rem;
+      list-style-type: none;
+
+      & li {
+        & a.with-icon {
+          gap: 0.25rem;
+        }
+      }
+    }
+
+    &:not(.blank-list) {
+      & li {
+        padding-left: 0.25rem;
+      }
+    }
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+
+  @media (--mobile) {
+    gap: 0.5rem;
+  }
+}
+
+.list-container {
+  flex: 1;
+  padding: 1rem;
+
+  @media (--mobile) {
+    margin-bottom: 1rem;
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  & > .header {
+    display: block;
+    padding-bottom: 0.25rem;
+  }
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+}

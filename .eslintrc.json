@@ -1,0 +1,44 @@
+{
+  "extends": [
+    "plugin:@shopify/esnext",
+    "plugin:github/recommended",
+    "plugin:github/browser",
+    "plugin:sonarjs/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "script"
+  },
+  "plugins": [
+    "@shopify",
+    "github",
+    "sonarjs"
+  ],
+  "rules": {
+    "@babel/object-curly-spacing": [
+      "error",
+      "always",
+      {
+        "arraysInObjects": false
+      }
+    ],
+    "camelcase": "off",
+    "curly": ["error", "multi-line"],
+    "line-comment-position": "off",
+    "prettier/prettier": [
+      "off",
+      {
+        "singleQuote": true
+      }
+    ],
+    "space-before-function-paren": ["error", {
+      "anonymous": "always",
+      "named": "never",
+      "asyncArrow": "always"
+    }]
+  }
+}

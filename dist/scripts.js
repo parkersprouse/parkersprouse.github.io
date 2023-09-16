@@ -1,0 +1,2 @@
+(()=>{document.addEventListener("DOMContentLoaded",()=>{let t=getComputedStyle(document.body).getPropertyValue("--breakpoint-width"),e=document.querySelector(".title");new ResizeObserver(()=>{window.innerWidth<Number.parseFloat(t)?(e==null?void 0:e.style)!==void 0&&(e.style.fontSize=`${e.offsetWidth*.75}%`):e.style.fontSize=void 0}).observe(document.body)});})();
+//# sourceMappingURL=scripts.js.map

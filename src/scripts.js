@@ -3,23 +3,19 @@
  * page if the header is too big.
  */
 document.addEventListener('DOMContentLoaded', () => {
+  const breakpoint = Number.parseFloat(getComputedStyle(document.body).getPropertyValue('--breakpoint-width'));
   const title = document.querySelector('.title');
-
-  const calculateFontScale = (el) => {
-    if (el?.style !== undefined) el.style.fontSize = `${el.offsetWidth * 0.75}%`;
-    return el;
-  };
-
-  const resizeHandler = () => {
-    if (window.innerWidth < 768) {
-      if (title) calculateFontScale(title);
-    } else {
-      title.style.fontSize = null;
-    }
-  };
-
-  window.addEventListener('resize', resizeHandler);
-  resizeHandler();
+  if (breakpoint && title) {
+    new ResizeObserver(() => {
+      if (window.innerWidth < breakpoint) {
+        if (title.style !== undefined) {
+          title.style.fontSize = `${title.offsetWidth * 0.75}%`;
+        }
+      } else {
+        title.style.fontSize = undefined;
+      }
+    }).observe(document.body);
+  }
 });
 
 /*
