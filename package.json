@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@fontsource/inter": "^5.0.8",
+    "@fontsource/rampart-one": "^5.0.11",
     "sanitize.css": "^13.0.0"
   },
   "devDependencies": {

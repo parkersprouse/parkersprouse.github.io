@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  window.addEventListener('resize', resizeHandler);
-  //resizeHandler();
+  // window.addEventListener('resize', resizeHandler);
+  resizeHandler();
 
   new ResizeObserver((entries) => {
     for (const entry of entries) {
