@@ -1,6 +1,7 @@
 import autoprefixer from 'autoprefixer';
 import postcss from 'postcss';
 import postcssPresetEnv from 'postcss-preset-env';
+import { createHash } from 'node:crypto';
 import { copyFile, readFile, rm } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -13,12 +14,24 @@ try {
   const __dirname = dirname(fileURLToPath(import.meta.url));
   const __root_dir = resolve(__dirname, '..');
   const __src_dir = join(__root_dir, 'src');
-  const css_input = join(__src_dir, 'styles.css');
   const __dist_dir = join(__root_dir, 'dist');
+  const css_input = join(__src_dir, 'styles.css');
+  const js_input = join(__src_dir, 'scripts.js');
+
+  const css_buffer = await readFile(css_input);
+  const css_hash = createHash('sha256');
+  css_hash.update(css_buffer);
+  const css_fingerprint = css_hash.digest('hex');
+  const hashed_css = `styles.${css_fingerprint}.css`;
+
+  const js_buffer = await readFile(js_input);
+  const js_hash = createHash('sha256');
+  js_hash.update(js_buffer);
+  const js_fingerprint = js_hash.digest('hex');
+  // const hashed_js = `scripts.${js_fingerprint}.js`;
 
   const shared_config = {
     bundle: true,
-    entryNames: '[name]',
     loader: {
       '.eot': 'copy',
       '.svg': 'copy',
@@ -54,7 +67,7 @@ try {
   console.log('[Step 3] esbuild - CSS');
   await build({
     ...shared_config,
-    outfile: join(__dist_dir, 'styles.css'),
+    outfile: join(__dist_dir, hashed_css),
     stdin: {
       contents: css,
       loader: 'css',
@@ -69,7 +82,8 @@ try {
   console.log('[Step 4] esbuild - JS');
   await build({
     ...shared_config,
-    entryPoints: [join(__src_dir, 'scripts.js')],
+    entryNames: `[name].${js_fingerprint}`,
+    entryPoints: [js_input],
     format: 'iife',
     outdir: __dist_dir,
     platform: 'browser',
