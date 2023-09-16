@@ -1,5 +1,6 @@
 dist/**/*
 !dist/*.html
+!dist/CNAME
 docs
 node_modules
 .parcel-cache
