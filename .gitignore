@@ -1,9 +1,6 @@
-dist/**/*
-!dist/*.html
-!dist/CNAME
+dist
 docs
 node_modules
-.parcel-cache
 .cache
 .env*
 .DS_Store
