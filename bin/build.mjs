@@ -2,7 +2,7 @@ import autoprefixer from 'autoprefixer';
 import postcss from 'postcss';
 import postcssPresetEnv from 'postcss-preset-env';
 import { createHash } from 'node:crypto';
-import { copyFile, readFile, rm, writeFile } from 'node:fs/promises';
+import { copyFile, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { build } from 'esbuild';
@@ -100,10 +100,18 @@ try {
     join(__dist_dir, 'index.html'),
     src_html_contents
       .replace(/<%{RESUME_FILE}%>/g, hashed_resume)
-      .replace(/<%{SCRIPTS_FILE}%>/g, js_fingerprint)
-      .replace(/<%{STYLES_FILE}%>/g, css_fingerprint),
+      .replace(/<%{SCRIPTS_FILE}%>/g, `scripts.${js_fingerprint}.js`)
+      .replace(/<%{STYLES_FILE}%>/g, hashed_css),
     'utf8',
   );
+
+  const img_files = await readdir(join(__src_dir, 'img'));
+  for (const file of img_files) {
+    await copyFile(
+      join(__src_dir, 'img', file),
+      join(__dist_dir, file),
+    );
+  }
 } catch (e) {
   console.error('Build script failed to complete:');
   console.error(e);
