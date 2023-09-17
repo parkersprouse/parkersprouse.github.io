@@ -14,15 +14,18 @@
  * @media (--mobile) {
  *   // styles that will only apply to mobile sizes
  * }
+ *
+ * @NOTE: CSS variables cannot be used in media queries.
  */
-@custom-media --mobile (width <= var(--breakpoint-width));
-@custom-media --desktop (width > var(--breakpoint-width));
+@custom-media --mobile (width < 768px);
+@custom-media --desktop-sm (width < 1280px);
+@custom-media --desktop-md (width < 1920px);
+@custom-media --desktop-lg (width >= 1920px);
 
 :root {
   --bg-color: #FFF;
   --border-color: #000;
   --box-shadow-color: #000;
-  --breakpoint-width: 767px;
   --link-color: #000;
   --link-hover-color: #F00;
   --text-color: #000;
@@ -155,27 +158,36 @@ ul {
   align-items: flex-start;
   justify-content: space-between;
 
-  @media (--mobile) {
-    gap: 0.5rem;
+  @media (--desktop-sm) {
+    align-items: stretch;
   }
 }
 
 .list-container {
   flex: 1;
+  flex-basis: auto;
+
+  width: calc(25% - 1.5rem);
   padding: 1rem;
+
   border: 1px solid var(--border-color);
   box-shadow: 6px 6px var(--box-shadow-color);
 
   & > .header {
     display: block;
     padding-bottom: 0.25rem;
+    font-variant: small-caps;
     border-bottom: 1px solid var(--border-color);
   }
 
+  @media (--desktop-sm) {
+    flex-basis: auto;
+    width: calc(50% - 1.5rem);
+  }
+
   @media (--mobile) {
-    flex-basis: 100%;
+    flex-basis: auto;
     width: 100%;
-    margin-bottom: 1rem;
   }
 }
 
