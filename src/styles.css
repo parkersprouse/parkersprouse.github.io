@@ -45,15 +45,7 @@
 }
 
 * {
-  text-rendering: optimizelegibility;
-
-  /*
-   * I want to include transitions for a bit of pop, but it causes the screen to flash when
-   * the saved theme does not match the preferred theme. So until I figure that out, I'm
-   * just gonna disable transitions.
-   * UPDATE: with the dark mode disabled, we can re-enable this for now
-   */
-  transition: all 0.15s ease;
+  text-rendering: optimizeLegibility;
 }
 
 html, body {
@@ -71,40 +63,10 @@ body {
   background-color: var(--bg-color);
 }
 
-h1, h2 {
-  margin-bottom: 1.5rem;
-}
-
-p {
-  margin: 0.5rem 0;
-}
-
-.synopsis {
-  margin-bottom: 1.5rem;
-}
-
-.page-container {
-  width: 75%;
-  margin: 0 auto;
-
-  @media (--mobile) {
-    width: 90%;
-  }
-}
-
-.title {
-  margin: 0;
-  font-family: 'Rampart One', sans-serif;
-  font-size: 4rem;
-
-  @media (--mobile) {
-    font-size: 3rem;
-  }
-}
-
 a {
   color: var(--link-color);
   text-decoration: none;
+  transition: color 0.15s ease;
 
   &:hover {
     color: var(--link-hover-color);
@@ -116,6 +78,14 @@ a {
     align-items: center;
     justify-content: flex-start;
   }
+}
+
+h1, h2 {
+  margin-bottom: 1.5rem;
+}
+
+p {
+  margin: 0.5rem 0;
 }
 
 ul {
@@ -148,6 +118,29 @@ ul {
         padding-left: 0.25rem;
       }
     }
+  }
+}
+
+.synopsis {
+  margin-bottom: 1.5rem;
+}
+
+.page-container {
+  width: 75%;
+  margin: 0 auto;
+
+  @media (--mobile) {
+    width: 90%;
+  }
+}
+
+.title {
+  margin: 0;
+  font-family: 'Rampart One', sans-serif;
+  font-size: 4rem;
+
+  @media (--mobile) {
+    font-size: 3rem;
   }
 }
 
