@@ -42,7 +42,6 @@
 }
 
 * {
-  text-rendering: optimizeLegibility;
   /*
    * I want to include transitions for a bit of pop, but it causes the screen to flash when
    * the saved theme does not match the preferred theme. So until I figure that out, I'm
@@ -50,6 +49,7 @@
    * UPDATE: with the dark mode disabled, we can re-enable this for now
    */
   transition: all 0.15s ease;
+  text-rendering: optimizeLegibility;
 }
 
 html, body {
@@ -64,19 +64,6 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   padding-bottom: 2rem;
-
-  & a {
-    color: var(--link-color);
-  }
-
-  & .list-container {
-    border: 1px solid var(--border-color);
-    box-shadow: 6px 6px var(--box-shadow-color);
-
-    & > .header {
-      border-bottom: 1px solid var(--border-color);
-    }
-  }
 }
 
 h1, h2 {
@@ -111,6 +98,7 @@ p {
 }
 
 a {
+  color: var(--link-color);
   text-decoration: none;
 
   &:hover {
@@ -171,6 +159,8 @@ ul {
 }
 
 .list-container {
+  border: 1px solid var(--border-color);
+  box-shadow: 6px 6px var(--box-shadow-color);
   flex: 1;
   padding: 1rem;
 
@@ -181,6 +171,7 @@ ul {
   }
 
   & > .header {
+    border-bottom: 1px solid var(--border-color);
     display: block;
     padding-bottom: 0.25rem;
   }
