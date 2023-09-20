@@ -3,11 +3,10 @@
  * page if the header is too big.
  */
 document.addEventListener('DOMContentLoaded', () => {
-  const breakpoint = Number.parseFloat(getComputedStyle(document.body).getPropertyValue('--breakpoint-width'));
   const title = document.querySelector('.title');
-  if (breakpoint && title) {
+  if (title) {
     new ResizeObserver(() => {
-      if (window.innerWidth < breakpoint) {
+      if (window.innerWidth < 768) {
         if (title.style !== undefined) {
           title.style.fontSize = `${title.offsetWidth * 0.75}%`;
         }
