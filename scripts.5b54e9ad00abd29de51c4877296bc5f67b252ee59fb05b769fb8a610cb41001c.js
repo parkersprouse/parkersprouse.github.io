@@ -1,2 +1,0 @@
-(()=>{document.addEventListener("DOMContentLoaded",()=>{let t=Number.parseFloat(getComputedStyle(document.body).getPropertyValue("--breakpoint-width")),e=document.querySelector(".title");t&&e&&new ResizeObserver(()=>{window.innerWidth<t?e.style!==void 0&&(e.style.fontSize=`${e.offsetWidth*.75}%`):e.style.fontSize=void 0}).observe(document.body)});})();
-//# sourceMappingURL=scripts.5b54e9ad00abd29de51c4877296bc5f67b252ee59fb05b769fb8a610cb41001c.js.map
