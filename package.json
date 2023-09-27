@@ -24,7 +24,7 @@
     "@shopify/eslint-plugin": "^43.0.0",
     "autoprefixer": "^10.4.15",
     "esbuild": "^0.19.3",
-    "eslint": "^8.49.0",
+    "eslint": "^8.50.0",
     "eslint-plugin-github": "^4.10.0",
     "eslint-plugin-sonarjs": "^0.21.0",
     "postcss": "^8.4.29",
