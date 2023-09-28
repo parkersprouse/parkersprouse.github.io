@@ -1,8 +1,9 @@
 @import url('sanitize.css/sanitize.css');
 @import url('sanitize.css/forms.css');
 @import url('sanitize.css/typography.css');
-@import url('@fontsource/inter/index.css');
-@import url('@fontsource/rampart-one/index.css');
+@import url('@fontsource/inter/latin-400.css');
+@import url('@fontsource/rampart-one/latin.css');
+@import url('devicons/css/devicons.min.css');
 
 /*
  * Example Usage:
@@ -87,6 +88,7 @@ a {
 
 h1, h2 {
   margin-bottom: 1.5rem;
+  font-weight: 400;
 }
 
 p {
@@ -143,6 +145,7 @@ ul {
   margin: 0;
   font-family: 'Rampart One', sans-serif;
   font-size: 4rem;
+  font-weight: 700;
 
   @media (--mobile) {
     font-size: 3rem;
