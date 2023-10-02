@@ -26,7 +26,7 @@
     "esbuild": "^0.19.3",
     "eslint-plugin-github": "^4.10.0",
     "eslint-plugin-sonarjs": "^0.21.0",
-    "postcss": "^8.4.30",
+    "postcss": "^8.4.31",
     "postcss-preset-env": "^9.1.4",
     "stylelint": "^15.10.3",
     "stylelint-config-clean-order": "^5.2.0",
