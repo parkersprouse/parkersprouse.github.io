@@ -16,7 +16,7 @@
     "start": "pnpm run build && esbuild --servedir=dist"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.0.8",
+    "@fontsource/inter": "^5.0.13",
     "@fontsource/rampart-one": "^5.0.11",
     "devicons": "^1.8.0",
     "sanitize.css": "^13.0.0"

@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@fontsource/inter':
-    specifier: ^5.0.8
-    version: 5.0.8
+    specifier: ^5.0.13
+    version: 5.0.13
   '@fontsource/rampart-one':
     specifier: ^5.0.11
     version: 5.0.11
@@ -726,8 +726,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@fontsource/inter@5.0.8:
-    resolution: {integrity: sha512-28knWH1BfOiRalfLs90U4sge5mpQ8ZH6FS0PTT+IZMKrZ7wNHDHRuKa1kQJg+uHcc6axBppnxll+HXM4c7zo/Q==}
+  /@fontsource/inter@5.0.13:
+    resolution: {integrity: sha512-FVIBhP9X/x02blF2VQl2Pji/c3jUjkWEQ9bom4vIrGwO1MlHRDXhXx9iA1hhjpcCIfH3oX68ihIBdYcFnOXhsg==}
     dev: false
 
   /@fontsource/rampart-one@5.0.11:
