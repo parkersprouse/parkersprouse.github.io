@@ -9,8 +9,8 @@ dependencies:
     specifier: ^5.0.8
     version: 5.0.8
   '@fontsource/rampart-one':
-    specifier: ^5.0.11
-    version: 5.0.11
+    specifier: ^5.0.14
+    version: 5.0.14
   devicons:
     specifier: ^1.8.0
     version: 1.8.0
@@ -730,8 +730,8 @@ packages:
     resolution: {integrity: sha512-28knWH1BfOiRalfLs90U4sge5mpQ8ZH6FS0PTT+IZMKrZ7wNHDHRuKa1kQJg+uHcc6axBppnxll+HXM4c7zo/Q==}
     dev: false
 
-  /@fontsource/rampart-one@5.0.11:
-    resolution: {integrity: sha512-j7ewOZh1u1XSDONSuxXtOVvs4leD293K6lKlbcOVswn7aB7qItEB12p2qo0TsSTsE+/tPtmXRml/RaHDrWrLXg==}
+  /@fontsource/rampart-one@5.0.14:
+    resolution: {integrity: sha512-Lx2kdGS+YHRkzej9wmPckwaXUyUmFPsCIWbQ1xoHKl180S2d/kb7waxDL8bz+9aNH8VSAzEIrCB/LeeGSTgeug==}
     dev: false
 
   /@github/browserslist-config@1.0.0:

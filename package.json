@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@fontsource/inter": "^5.0.8",
-    "@fontsource/rampart-one": "^5.0.11",
+    "@fontsource/rampart-one": "^5.0.14",
     "devicons": "^1.8.0",
     "sanitize.css": "^13.0.0"
   },
