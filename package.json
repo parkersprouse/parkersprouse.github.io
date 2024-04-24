@@ -16,20 +16,20 @@
     "start": "pnpm run build && esbuild --servedir=dist"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.0.8",
-    "@fontsource/rampart-one": "^5.0.11",
+    "@fontsource/inter": "^5.0.18",
+    "@fontsource/rampart-one": "^5.0.19",
     "devicons": "^1.8.0",
     "sanitize.css": "^13.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.16",
-    "esbuild": "^0.19.3",
-    "eslint-plugin-github": "^4.10.0",
+    "autoprefixer": "^10.4.19",
+    "esbuild": "^0.19.12",
+    "eslint-plugin-github": "^4.10.2",
     "eslint-plugin-sonarjs": "^0.21.0",
-    "postcss": "^8.4.30",
-    "postcss-preset-env": "^9.1.4",
-    "stylelint": "^15.10.3",
-    "stylelint-config-clean-order": "^5.2.0",
+    "postcss": "^8.4.38",
+    "postcss-preset-env": "^9.5.9",
+    "stylelint": "^15.11.0",
+    "stylelint-config-clean-order": "^5.4.2",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-use-nesting": "^4.1.0",
     "xo": "^0.56.0"
