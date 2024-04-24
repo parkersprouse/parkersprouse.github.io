@@ -24,20 +24,21 @@
 @custom-media --desktop-lg (width >= 1920px);
 
 :root {
-  --bg-color: #FFF;
+  --bg-color: #ECEFF3;
   --border-color: #000;
-  --box-shadow-color: #000;
-  --link-color: #000;
-  --link-hover-color: #F00;
+  --box-shadow-color: var(--border-color);
+  --link-color: var(--text-color);
+  --link-hover-color: #CC0100;
   --text-color: #000;
 }
 
 .dark {
-  --bg-color: rgb(30 41 59);
-  --border-color: rgb(203 213 225);
-  --box-shadow-color: rgb(203 213 225);
-  --link-color: rgb(203 213 225);
-  --text-color: rgb(203 213 225);
+  --bg-color: #2e3440;
+  --border-color: #4c566a;
+  --box-shadow-color: var(--border-color);
+  --link-color: var(--text-color);
+  --link-hover-color: #bf616a;
+  --text-color: #d8dee9;
 }
 
 ::selection {
@@ -54,7 +55,7 @@ html, body {
   min-height: 100vh;
 
   font-family: Inter, sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
 }
 
@@ -194,6 +195,6 @@ ul {
 
 .theme-toggle {
   position: absolute;
-  top: 0;
+  top: 0.5rem;
   right: 1rem;
 }
