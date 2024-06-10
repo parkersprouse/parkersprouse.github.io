@@ -26,8 +26,8 @@ devDependencies:
     specifier: ^0.20.2
     version: 0.20.2
   eslint-plugin-github:
-    specifier: ^4.10.2
-    version: 4.10.2(eslint@8.57.0)(typescript@5.4.5)
+    specifier: ^5.0.1
+    version: 5.0.1(eslint@8.57.0)(typescript@5.4.5)
   eslint-plugin-sonarjs:
     specifier: ^0.21.0
     version: 0.21.0(eslint@8.57.0)
@@ -2310,8 +2310,8 @@ packages:
       lodash.upperfirst: 4.3.1
     dev: true
 
-  /eslint-plugin-github@4.10.2(eslint@8.57.0)(typescript@5.4.5):
-    resolution: {integrity: sha512-F1F5aAFgi1Y5hYoTFzGQACBkw5W1hu2Fu5FSTrMlXqrojJnKl1S2pWO/rprlowRQpt+hzHhqSpsfnodJEVd5QA==}
+  /eslint-plugin-github@5.0.1(eslint@8.57.0)(typescript@5.4.5):
+    resolution: {integrity: sha512-qbXG3wL5Uh2JB92EKeX2hPtO9c/t75qVxQjVLYuTFfhHifLZzv9CBvLCvoaBhLrAC/xTMVht7DK/NofYK8X4Dg==}
     hasBin: true
     peerDependencies:
       eslint: ^8.0.1
