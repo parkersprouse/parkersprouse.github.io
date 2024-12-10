@@ -8,6 +8,9 @@ import { fileURLToPath } from 'node:url';
 import { build } from 'esbuild';
 
 try {
+  console.error('! OLD BUILD SCRIPT - NO LONGER IN USE !');
+  // process.exit(1);
+
   /**
    * Configuration
    */

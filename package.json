@@ -2,36 +2,54 @@
   "name": "parkersprouse.github.io",
   "private": true,
   "version": "1.0.0",
+  "license": "ISC",
   "browserslist": "defaults",
+  "type": "module",
   "engines": {
     "node": "^20",
-    "pnpm": "^8"
+    "pnpm": "^9"
   },
   "scripts": {
+    "preinstall": "node ./bin/ensure_pnpm.js",
+    "start": "pnpm run build && esbuild --servedir=dist",
     "build": "node ./bin/build.mjs",
-    "lint:css": "stylelint src/**/*.css",
-    "lint:css:fix": "stylelint --fix src/**/*.css",
-    "lint:js": "xo src/**/*.js",
-    "lint:js:fix": "xo src/**/*.js --fix",
-    "start": "pnpm run build && esbuild --servedir=dist"
+    "lint": "pnpm run lint:css && pnpm run lint:js",
+    "lint:fix": "pnpm run lint:css:fix && pnpm run lint:js:fix",
+    "lint:css": "stylelint --quiet-deprecation-warnings -f github \"src/**/*.css\"",
+    "lint:css:fix": "stylelint -f verbose --fix \"src/**/*.css\"",
+    "lint:js": "eslint .",
+    "lint:js:fix": "eslint . --fix",
+    "clean": "rimraf -I -g dist && rimraf -I -g node_modules",
+    "clean:hard": "rimraf -I -g pnpm-lock.yaml && pnpm run clean"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.0.18",
-    "@fontsource/rampart-one": "^5.0.19",
+    "@fontsource/inter": "^5.1.0",
+    "@fontsource/rampart-one": "^5.1.0",
     "devicons": "^1.8.0",
     "sanitize.css": "^13.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.19",
-    "esbuild": "^0.21.5",
-    "eslint-plugin-github": "^4.10.2",
-    "eslint-plugin-sonarjs": "^1.0.3",
-    "postcss": "^8.4.38",
-    "postcss-preset-env": "^9.5.14",
-    "stylelint": "^15.11.0",
-    "stylelint-config-clean-order": "^5.4.2",
-    "stylelint-config-standard": "^34.0.0",
-    "stylelint-use-nesting": "^4.1.0",
-    "xo": "^0.58.0"
+    "@eslint-community/eslint-plugin-eslint-comments": "^4.4.1",
+    "@eslint/js": "^9.16.0",
+    "@stylistic/eslint-plugin": "^2.11.0",
+    "@stylistic/stylelint-plugin": "^3.1.1",
+    "eslint": "^9.16.0",
+    "eslint-plugin-import-x": "^4.5.0",
+    "eslint-plugin-n": "^17.14.0",
+    "eslint-plugin-unicorn": "^56.0.1",
+    "globals": "^15.13.0",
+    "rimraf": "^6.0.1",
+    "stylelint": "^16.11.0",
+    "stylelint-config-clean-order": "^6.1.0",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-plugin-defensive-css": "^1.0.4",
+    "stylelint-use-nesting": "^6.0.0"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "eslint": "9"
+      }
+    }
   }
 }

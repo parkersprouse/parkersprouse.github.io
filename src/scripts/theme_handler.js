@@ -1,43 +1,26 @@
-document.addEventListener('DOMContentLoaded', () => {
-  /**
-   * Set up a window resize listener that adjusts the page header's font size to fit the width of the
-   * page if the header is too big.
-   */
-  const title = document.querySelector('.title');
-  if (title) {
-    new ResizeObserver(() => {
-      if (window.innerWidth < 768) {
-        if (title.style !== undefined) {
-          title.style.fontSize = `${title.offsetWidth * 0.75}%`;
-        }
-      } else {
-        title.style.fontSize = undefined;
-      }
-    }).observe(document.body);
-  }
-
+export function initThemeHandler() {
   const Theme = Object.freeze({
     Dark: 'dark',
     Light: 'light',
   });
+  const body = document.body;
   const toggle_container = document.querySelector('.theme-toggle');
-  const toggle_link = toggle_container.querySelector('a');
-  const body = document.querySelector('body');
+  const toggle_button = toggle_container.querySelector('button');
 
   function toggleTheme(theme) {
     if (theme === Theme.Dark) {
       body.classList.remove('light');
       body.classList.add('dark');
-      toggle_link.innerText = 'light mode';
+      toggle_button.textContent = 'light mode';
     } else {
       body.classList.remove('dark');
       body.classList.add('light');
-      toggle_link.innerText = 'dark mode';
+      toggle_button.textContent = 'dark mode';
     }
     window.localStorage.setItem('theme', theme);
   }
 
-  toggle_link.addEventListener('click', (e) => {
+  toggle_button.addEventListener('click', (e) => {
     e.preventDefault();
     if (body.classList.contains('light')) toggleTheme(Theme.Dark);
     else toggleTheme(Theme.Light);
@@ -51,4 +34,4 @@ document.addEventListener('DOMContentLoaded', () => {
   else if (window.matchMedia('(prefers-color-scheme: light)').matches) toggleTheme(Theme.Light);
 
   toggle_container.style.display = 'initial';
-});
+}

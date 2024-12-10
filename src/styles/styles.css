@@ -1,9 +1,7 @@
-@import url('sanitize.css/sanitize.css');
-@import url('sanitize.css/forms.css');
-@import url('sanitize.css/typography.css');
 @import url('@fontsource/inter/latin-400.css');
 @import url('@fontsource/rampart-one/latin.css');
 @import url('devicons/css/devicons.min.css');
+@import url('./_reset.css');
 
 /*
  * Example Usage:
@@ -46,17 +44,31 @@
   background-color: var(--text-color);
 }
 
-* {
-  text-rendering: optimizeLegibility;
-}
-
 html, body {
   min-height: 100%;
   min-height: 100vh;
 
-  font-family: Inter, sans-serif;
+  /* stylelint-disable -- Unsure where, but there's a bug in Stylelint that removes comments between
+                          values when running `--fix`, but it doesn't seem to be associated with a
+                          specific rule, so we just have to disable Stylelint for the whole attribute.
+                          @see https://github.com/stylelint/stylelint/issues/4620 (it isn't `indentation`) */
+  font-family:
+    'Inter', /* ------------- Primary font ----------- */
+    system-ui, /* ----------- macOS system fonts ----- */
+    -apple-system, /* ------- Safari on macOS >= 10.11 */
+    BlinkMacSystemFont, /* -- Chrome on macOS >= 10.11 */
+    'Segoe UI', /* ---------- >= Windows Vista ------- */
+    'Noto Sans', /* --------- >= KDE Plasma 5 -------- */
+    'Helvetica',
+    'Arial',
+    sans-serif, /* ---------- fallback --------------- */
+    'Apple Color Emoji', /* - macOS emoji ------------ */
+    'Segoe UI Emoji'; /* ---- Windows emoji ---------- */
+  /* stylelint-enable */
+
   font-size: 1rem;
   font-weight: 400;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -70,12 +82,15 @@ a {
   text-decoration: none;
   transition: color 0.15s ease;
 
-  &:hover {
-    color: var(--link-hover-color);
+  @media screen and (hover: hover) {
+    &:hover {
+      color: var(--link-hover-color);
+    }
   }
 
   &.with-icon {
     display: flex;
+    flex-wrap: nowrap;
     gap: 0.5rem;
     align-items: center;
     justify-content: flex-start;
@@ -137,14 +152,27 @@ ul {
   width: 75%;
   margin: 0 auto;
 
+  @media (--desktop-lg) {
+    width: 1920px;
+    max-width: 75%;
+  }
+
+  @media (--desktop-md) {
+    width: calc(1920px * 0.75);
+  }
+
+  @media (--desktop-sm) {
+    width: calc(1280px * 0.75);
+  }
+
   @media (--mobile) {
-    width: 90%;
+    width: calc(768px * 0.9);
   }
 }
 
 .title {
   margin: 0;
-  font-family: 'Rampart One', sans-serif;
+  font-family: 'Rampart One', 'Inter', sans-serif;
   font-size: 4rem;
   font-weight: 700;
 
@@ -194,7 +222,6 @@ ul {
 }
 
 .theme-toggle {
-  position: absolute;
-  top: 0.5rem;
-  right: 1rem;
+  width: 100%;
+  text-align: center;
 }
