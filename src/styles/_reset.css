@@ -13,13 +13,13 @@
  *  - Internal preferences                                     *
  * ----------------------------------------------------------- */
 
-@import url('sanitize.css');
-@import url('sanitize.css/forms.css');
-@import url('sanitize.css/typography.css');
-@import url('sanitize.css/reduce-motion.css');
-@import url('sanitize.css/assets.css');
-@import url('sanitize.css/system-ui.css');
-@import url('sanitize.css/ui-monospace.css');
+@import url('npm:sanitize.css');
+@import url('npm:sanitize.css/forms.css');
+@import url('npm:sanitize.css/typography.css');
+@import url('npm:sanitize.css/reduce-motion.css');
+@import url('npm:sanitize.css/assets.css');
+@import url('npm:sanitize.css/system-ui.css');
+@import url('npm:sanitize.css/ui-monospace.css');
 @import url('./_apple.css');
 
 /* https://project-awesome.org/AllThingsSmitty/css-protips#use-root-for-flexible-type *\/

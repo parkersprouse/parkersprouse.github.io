@@ -1,13 +1,13 @@
-@import url('@fontsource/inter/latin-400.css');
-@import url('@fontsource/rampart-one/latin.css');
-@import url('devicons/css/devicons.min.css');
+@import url('npm:@fontsource/inter/latin-400.css');
+@import url('npm:@fontsource/rampart-one/latin.css');
+@import url('npm:devicons/css/devicons.min.css');
 @import url('./_reset.css');
 
 /*
  * Example Usage:
  *
- * @media (--desktop) {
- *   // styles that will only apply to desktop sizes
+ * @media (--desktop-lg) {
+ *   // styles that will only apply to large desktop sizes
  * }
  *
  * @media (--mobile) {
@@ -16,10 +16,10 @@
  *
  * @NOTE: CSS variables cannot be used in media queries.
  */
-@custom-media --mobile (width < 768px);
-@custom-media --desktop-sm (width < 1280px);
-@custom-media --desktop-md (width < 1920px);
 @custom-media --desktop-lg (width >= 1920px);
+@custom-media --desktop-md (width < 1920px);
+@custom-media --desktop-sm (width < 1280px);
+@custom-media --mobile (width < 768px);
 
 :root {
   --bg-color: #ECEFF3;
@@ -31,12 +31,12 @@
 }
 
 .dark {
-  --bg-color: #2e3440;
-  --border-color: #4c566a;
+  --bg-color: #18191b;
+  --border-color: #2f3135;
   --box-shadow-color: var(--border-color);
   --link-color: var(--text-color);
-  --link-hover-color: #bf616a;
-  --text-color: #d8dee9;
+  --link-hover-color: #d45453;
+  --text-color: #edeef0;
 }
 
 ::selection {
@@ -96,6 +96,7 @@ a {
     justify-content: flex-start;
 
     & > svg {
+      flex-shrink: 0;
       width: 16px;
       height: 16px;
     }
@@ -155,11 +156,11 @@ ul {
 
 .page-container {
   width: 75%;
+  max-width: 75%;
   margin: 0 auto;
 
   @media (--desktop-lg) {
     width: 1920px;
-    max-width: 75%;
   }
 
   @media (--desktop-md) {
@@ -172,6 +173,7 @@ ul {
 
   @media (--mobile) {
     width: calc(768px * 0.9);
+    max-width: 90%;
   }
 }
 
@@ -233,7 +235,7 @@ ul {
   justify-content: center;
 
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 
   & button {
     padding: 0;
