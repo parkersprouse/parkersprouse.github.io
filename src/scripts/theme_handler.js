@@ -33,5 +33,5 @@ export function initThemeHandler() {
   else if (window.matchMedia('(prefers-color-scheme: dark)').matches) toggleTheme(Theme.Dark);
   else if (window.matchMedia('(prefers-color-scheme: light)').matches) toggleTheme(Theme.Light);
 
-  toggle_container.style.display = 'initial';
+  toggle_container.classList.remove('invisible');
 }

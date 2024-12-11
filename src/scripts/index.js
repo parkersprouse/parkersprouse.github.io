@@ -1,3 +1,5 @@
+import '../styles/index.css';
+
 import { initThemeHandler } from './theme_handler.js';
 
 /**

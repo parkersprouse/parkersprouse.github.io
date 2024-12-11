@@ -11,16 +11,19 @@
   },
   "scripts": {
     "preinstall": "node ./bin/ensure_pnpm.js",
-    "start": "pnpm run build && esbuild --servedir=dist",
-    "build": "node ./bin/build.mjs",
+    "start": "pnpm run dev",
+    "dev": "rsbuild dev",
+    "preview": "pnpm run build && rsbuild preview",
+    "build": "rsbuild build",
     "lint": "pnpm run lint:css && pnpm run lint:js",
     "lint:fix": "pnpm run lint:css:fix && pnpm run lint:js:fix",
     "lint:css": "stylelint --quiet-deprecation-warnings -f github \"src/**/*.css\"",
     "lint:css:fix": "stylelint -f verbose --fix \"src/**/*.css\"",
     "lint:js": "eslint .",
     "lint:js:fix": "eslint . --fix",
-    "clean": "rimraf -I -g dist && rimraf -I -g node_modules",
-    "clean:hard": "rimraf -I -g pnpm-lock.yaml && pnpm run clean"
+    "clean": "pnpm run clean:dist && rimraf -I -g node_modules",
+    "clean:hard": "rimraf -I -g pnpm-lock.yaml && pnpm run clean",
+    "clean:dist": "rimraf -I -g dist"
   },
   "dependencies": {
     "@fontsource/inter": "^5.1.0",
@@ -31,6 +34,7 @@
   "devDependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "^4.4.1",
     "@eslint/js": "^9.16.0",
+    "@rsbuild/core": "^1.1.9",
     "@stylistic/eslint-plugin": "^2.11.0",
     "@stylistic/stylelint-plugin": "^3.1.1",
     "eslint": "^9.16.0",
