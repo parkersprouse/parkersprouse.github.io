@@ -31,7 +31,6 @@
   "dependencies": {
     "@fontsource/inter": "^5.1.0",
     "@fontsource/rampart-one": "^5.1.0",
-    "devicons": "^1.8.0",
     "sanitize.css": "^13.0.0"
   },
   "devDependencies": {

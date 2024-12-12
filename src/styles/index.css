@@ -1,6 +1,6 @@
 @import url('npm:@fontsource/inter/latin-400.css');
+@import url('npm:@fontsource/inter/latin-400-italic.css');
 @import url('npm:@fontsource/rampart-one/latin.css');
-@import url('npm:devicons/css/devicons.min.css');
 @import url('./_reset.css');
 
 /*
@@ -27,6 +27,8 @@
   --box-shadow-color: var(--border-color);
   --link-color: var(--text-color);
   --link-hover-color: #CC0100;
+  --svg-alt-color: #545454;
+  --svg-alt-hover-color: #d45453;
   --text-color: #000;
 }
 
@@ -36,6 +38,8 @@
   --box-shadow-color: var(--border-color);
   --link-color: var(--text-color);
   --link-hover-color: #d45453;
+  --svg-alt-color: #cbd1db;
+  --svg-alt-hover-color: #df7f7e;
   --text-color: #edeef0;
 }
 
@@ -87,20 +91,6 @@ a {
       color: var(--link-hover-color);
     }
   }
-
-  &.with-icon {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 0.5rem;
-    align-items: center;
-    justify-content: flex-start;
-
-    & > svg {
-      flex-shrink: 0;
-      width: 16px;
-      height: 16px;
-    }
-  }
 }
 
 h1, h2 {
@@ -130,12 +120,6 @@ ul {
     &.blank-list {
       padding-left: 2rem;
       list-style-type: none;
-
-      & li {
-        & a.with-icon {
-          gap: 0.25rem;
-        }
-      }
     }
 
     &:not(.blank-list) {
@@ -148,6 +132,36 @@ ul {
 
 .invisible {
   visibility: hidden !important;
+}
+
+.with-icon {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-start;
+
+  @media screen and (hover: hover) {
+    &:hover {
+      & > svg.duotone {
+        & path.duotone--secondary {
+          fill: var(--svg-alt-hover-color);
+        }
+      }
+    }
+  }
+
+  & > svg {
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
+
+    &.duotone {
+      & path.duotone--secondary {
+        fill: var(--svg-alt-color);
+      }
+    }
+  }
 }
 
 .synopsis {

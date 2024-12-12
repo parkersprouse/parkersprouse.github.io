@@ -14,9 +14,6 @@ importers:
       '@fontsource/rampart-one':
         specifier: ^5.1.0
         version: 5.1.0
-      devicons:
-        specifier: ^1.8.0
-        version: 1.8.0
       sanitize.css:
         specifier: ^13.0.0
         version: 13.0.0
@@ -919,10 +916,6 @@ packages:
   detect-libc@2.0.3:
     resolution: {integrity: sha512-bwy0MGW55bG41VqxxypOsdSdGqLwXPI/focwgTYCFMbdUiBAxLg9CFzG08sz2aqzknwiX7Hkl0bQENjg8iLByw==}
     engines: {node: '>=8'}
-
-  devicons@1.8.0:
-    resolution: {integrity: sha512-tRS3bNxy9mbDVK0g4/+t5PlwMjjOteuh5LAhjMgimAPUgiKB+wCUCf7+uugufZ1vC9AKMRn5Pljbi210qCbmkQ==}
-    engines: {node: '>=0.10.3'}
 
   dir-glob@3.0.1:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
@@ -3035,8 +3028,6 @@ snapshots:
   detect-libc@1.0.3: {}
 
   detect-libc@2.0.3: {}
-
-  devicons@1.8.0: {}
 
   dir-glob@3.0.1:
     dependencies:
