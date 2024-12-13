@@ -1,15 +1,26 @@
 name: Build Site
 
-env:
-  GITHUB_WORKSPACE: /home/runner/work/parkersprouse.github.io/parkersprouse.github.io
-
 on:
   push:
-    branches: [ main ]
+    branches: [ 'main' ]
   workflow_dispatch:
+
+# Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  id-token: write
+  pages: write
+
+# Allow one concurrent deployment
+concurrency:
+  cancel-in-progress: true
+  group: 'pages'
 
 jobs:
   configure_build_deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       # STEP 1 #
@@ -34,16 +45,16 @@ jobs:
         run: pnpm run build
 
       # STEP 5 #
-      - name: Capture Build Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          if-no-files-found: error
-          path: ${{ env.GITHUB_WORKSPACE }}/dist
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
 
       # STEP 6 #
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload artifact packaged for Pages
+        uses: actions/upload-pages-artifact@v3
         with:
-          branch: deployed
-          folder: ${{ env.GITHUB_WORKSPACE }}/dist
-          commit-message: Site built successfully - deploying
+          path: './dist'
+
+      # STEP 7 #
+      - name: Deploy artifact to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
