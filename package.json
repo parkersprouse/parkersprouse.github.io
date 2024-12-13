@@ -3,8 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "license": "ISC",
-  "browserslist": "since 2020, > 0.3%, not dead",
+  "browserslist": "since 2018, > 0.3%, not dead",
   "type": "module",
+  "homepage": "https://parkersprouse.me",
   "engines": {
     "node": "^20",
     "pnpm": "^9"
@@ -18,6 +19,8 @@
     "preview": "vite preview --mode production",
     "prebuild": "pnpm run clean:dist",
     "build": "vite build --mode production",
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d dist -b deployed",
     "lint": "pnpm run lint:css && pnpm run lint:js",
     "lint:fix": "pnpm run lint:css:fix && pnpm run lint:js:fix",
     "lint:css": "stylelint --quiet-deprecation-warnings -f github \"styles/**/*.css\"",
@@ -43,6 +46,7 @@
     "eslint-plugin-import-x": "^4.5.0",
     "eslint-plugin-n": "^17.14.0",
     "eslint-plugin-unicorn": "^56.0.1",
+    "gh-pages": "^6.2.0",
     "globals": "^15.13.0",
     "rimraf": "^6.0.1",
     "stylelint": "^16.11.0",

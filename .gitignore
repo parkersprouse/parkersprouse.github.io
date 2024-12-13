@@ -4,4 +4,3 @@ node_modules
 .cache
 .env*
 .DS_Store
-.parcel-cache
