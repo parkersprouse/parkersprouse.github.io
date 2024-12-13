@@ -26,7 +26,7 @@
     "preclean": "pnpm run clean:dist",
     "clean": "rimraf -I -g node_modules",
     "clean:hard": "rimraf -I -g pnpm-lock.yaml && pnpm run clean",
-    "clean:dist": "rimraf -I -g dist"
+    "clean:dist": "rimraf -I -g dist .parcel-cache"
   },
   "dependencies": {
     "@fontsource/inter": "^5.1.0",
@@ -36,7 +36,9 @@
   "devDependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "^4.4.1",
     "@eslint/js": "^9.16.0",
+    "@parcel/config-default": "^2.13.2",
     "@parcel/packager-raw-url": "2.13.2",
+    "@parcel/plugin": "^2.13.2",
     "@parcel/transformer-webmanifest": "2.13.2",
     "@stylistic/eslint-plugin": "^2.11.0",
     "@stylistic/stylelint-plugin": "^3.1.1",
@@ -46,6 +48,8 @@
     "eslint-plugin-unicorn": "^56.0.1",
     "globals": "^15.13.0",
     "parcel": "^2.13.2",
+    "parcel-reporter-static-files-copy": "^1.5.3",
+    "parcel-resolver-ignore": "^2.2.0",
     "rimraf": "^6.0.1",
     "stylelint": "^16.11.0",
     "stylelint-config-clean-order": "^6.1.0",
@@ -79,5 +83,15 @@
       "customMedia": true,
       "nesting": true
     }
-  }
+  },
+  "staticFiles": {
+    "staticPath": "src/static"
+  },
+  "parcelIgnore": [
+    "apple-touch-icon.png",
+    "favicon-32x32.png",
+    "favicon-16x16.png",
+    "safari-pinned-tab.svg",
+    "site.webmanifest"
+  ]
 }

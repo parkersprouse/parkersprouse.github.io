@@ -38,6 +38,7 @@ export default [
       '**/node_modules',
       '**/dist',
       '*.config.js',
+      'parcel_ignore_webmanifest.cjs',
     ],
   },
   {
