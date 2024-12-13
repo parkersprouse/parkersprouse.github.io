@@ -10,7 +10,7 @@ import globals from 'globals';
 
 const exts = ['.cjs', '.js', '.mjs'];
 const node_files = exts.map((ext) => `bin/**/*${ext}`);
-const browser_files = exts.map((ext) => `src/**/*${ext}`);
+const browser_files = exts.map((ext) => `scripts/**/*${ext}`);
 
 /**
  * ------------------------------------------------------------------------------
@@ -38,7 +38,6 @@ export default [
       '**/node_modules',
       '**/dist',
       '*.config.js',
-      'parcel_ignore_webmanifest.cjs',
     ],
   },
   {

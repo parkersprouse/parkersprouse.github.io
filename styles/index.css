@@ -1,6 +1,6 @@
-@import url('npm:@fontsource/inter/latin-400.css');
-@import url('npm:@fontsource/inter/latin-400-italic.css');
-@import url('npm:@fontsource/rampart-one/latin.css');
+@import url('@fontsource/inter/latin-400.css');
+@import url('@fontsource/inter/latin-400-italic.css');
+@import url('@fontsource/rampart-one/latin.css');
 @import url('./_reset.css');
 
 /*
