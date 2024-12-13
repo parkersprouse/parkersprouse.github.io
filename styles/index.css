@@ -1,0 +1,266 @@
+@import url('@fontsource/inter/latin-400.css');
+@import url('@fontsource/inter/latin-400-italic.css');
+@import url('@fontsource/rampart-one/latin.css');
+@import url('./_reset.css');
+
+/*
+ * Example Usage:
+ *
+ * @media (--desktop-lg) {
+ *   // styles that will only apply to large desktop sizes
+ * }
+ *
+ * @media (--mobile) {
+ *   // styles that will only apply to mobile sizes
+ * }
+ *
+ * @NOTE: CSS variables cannot be used in media queries.
+ */
+@custom-media --desktop-lg (width >= 1920px);
+@custom-media --desktop-md (width < 1920px);
+@custom-media --desktop-sm (width < 1280px);
+@custom-media --mobile (width < 768px);
+
+:root {
+  --bg-color: #ECEFF3;
+  --border-color: #000;
+  --box-shadow-color: var(--border-color);
+  --link-color: var(--text-color);
+  --link-hover-color: #CC0100;
+  --svg-alt-color: #545454;
+  --svg-alt-hover-color: #d45453;
+  --text-color: #000;
+}
+
+.dark {
+  --bg-color: #18191b;
+  --border-color: #2f3135;
+  --box-shadow-color: var(--border-color);
+  --link-color: var(--text-color);
+  --link-hover-color: #d45453;
+  --svg-alt-color: #cbd1db;
+  --svg-alt-hover-color: #df7f7e;
+  --text-color: #edeef0;
+}
+
+::selection {
+  color: var(--bg-color);
+  background-color: var(--text-color);
+}
+
+html, body {
+  min-height: 100%;
+  min-height: 100vh;
+
+  /* stylelint-disable -- Unsure where, but there's a bug in Stylelint that removes comments between
+                          values when running `--fix`, but it doesn't seem to be associated with a
+                          specific rule, so we just have to disable Stylelint for the whole attribute.
+                          @see https://github.com/stylelint/stylelint/issues/4620 (it isn't `indentation`) */
+  font-family:
+    'Inter', /* ------------- Primary font ----------- */
+    system-ui, /* ----------- macOS system fonts ----- */
+    -apple-system, /* ------- Safari on macOS >= 10.11 */
+    BlinkMacSystemFont, /* -- Chrome on macOS >= 10.11 */
+    'Segoe UI', /* ---------- >= Windows Vista ------- */
+    'Noto Sans', /* --------- >= KDE Plasma 5 -------- */
+    'Helvetica',
+    'Arial',
+    sans-serif, /* ---------- fallback --------------- */
+    'Apple Color Emoji', /* - macOS emoji ------------ */
+    'Segoe UI Emoji'; /* ---- Windows emoji ---------- */
+  /* stylelint-enable */
+
+  font-size: 1rem;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  padding-bottom: 2rem;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.15s ease;
+
+  @media screen and (hover: hover) {
+    &:hover {
+      color: var(--link-hover-color);
+    }
+  }
+}
+
+h1, h2 {
+  margin-bottom: 1.5rem;
+  padding: 0;
+  font-weight: 400;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+ul {
+  margin-bottom: 0;
+  padding-left: 2rem;
+  list-style-type: square;
+
+  &.blank-list {
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  & ul {
+    padding-left: 2rem;
+    list-style-type: '+';
+
+    &.blank-list {
+      padding-left: 2rem;
+      list-style-type: none;
+    }
+
+    &:not(.blank-list) {
+      & li {
+        padding-left: 0.25rem;
+      }
+    }
+  }
+}
+
+.invisible {
+  visibility: hidden !important;
+}
+
+.with-icon {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-start;
+
+  @media screen and (hover: hover) {
+    &:hover {
+      & > svg.duotone {
+        & path.duotone--secondary {
+          fill: var(--svg-alt-hover-color);
+        }
+      }
+    }
+  }
+
+  & > svg {
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
+
+    &.duotone {
+      & path.duotone--secondary {
+        fill: var(--svg-alt-color);
+      }
+    }
+  }
+}
+
+.synopsis {
+  margin-bottom: 1.5rem;
+}
+
+.page-container {
+  width: 75%;
+  max-width: 75%;
+  margin: 0 auto;
+
+  @media (--desktop-lg) {
+    width: 1920px;
+  }
+
+  @media (--desktop-md) {
+    width: calc(1920px * 0.75);
+  }
+
+  @media (--desktop-sm) {
+    width: calc(1280px * 0.75);
+  }
+
+  @media (--mobile) {
+    width: calc(768px * 0.9);
+    max-width: 90%;
+  }
+}
+
+.title {
+  margin: 0;
+  font-family: 'Rampart One', 'Inter', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+
+  @media (--mobile) {
+    font-size: 3rem;
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @media (--desktop-sm) {
+    align-items: stretch;
+  }
+}
+
+.list-container {
+  flex: 1;
+  flex-basis: auto;
+
+  width: calc(25% - 1.5rem);
+  padding: 1rem;
+
+  border: 1px solid var(--border-color);
+  box-shadow: 6px 6px var(--box-shadow-color);
+
+  & > .header {
+    display: block;
+    padding-bottom: 0.25rem;
+    font-variant: small-caps;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  @media (--desktop-sm) {
+    flex-basis: auto;
+    width: calc(50% - 1.5rem);
+  }
+
+  @media (--mobile) {
+    flex-basis: auto;
+    width: 100%;
+  }
+}
+
+.theme-toggle {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  margin-top: 1.5rem;
+
+  & button {
+    padding: 0;
+    color: var(--text-color);
+    background: none;
+    border: none;
+
+    @media screen and (hover: hover) {
+      &:hover {
+        color: var(--link-hover-color);
+      }
+    }
+  }
+}
