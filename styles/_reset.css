@@ -71,8 +71,8 @@ body {
 /* https://project-awesome.org/AllThingsSmitty/css-protips#equal-width-table-cells */
 :where(table) {
   table-layout: fixed;
-  text-indent: 0;
   border-color: inherit;
+  text-indent: 0;
 }
 
 /* https://project-awesome.org/AllThingsSmitty/css-protips#use-attribute-selectors-with-empty-links */
@@ -173,11 +173,11 @@ body {
   height: fit-content;
   margin: auto;
   padding: 1em;
+  border: solid;
 
   color: inherit;
 
   background-color: inherit;
-  border: solid;
 
   &:not([open]) {
     display: none;

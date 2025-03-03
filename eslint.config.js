@@ -64,7 +64,7 @@ export default [
    * [Extension] ESLint Stylistic's set of rules (recommended config)
    * https://eslint.style/guide/config-presets#static-configurations
    */
-  stylistic.configs['recommended-flat'],
+  stylistic.configs['recommended'],
 
   /**
    * ------------------------------------------------------------------------------
@@ -512,7 +512,7 @@ export default [
       'unicorn/no-for-loop': 'error',
       'unicorn/no-hex-escape': 'error',
       'unicorn/no-instanceof-array': 'error',
-      // 'unicorn/no-length-as-slice-end': 'error', // Not released yet
+      'unicorn/no-length-as-slice-end': 'error',
       'unicorn/no-lonely-if': 'error',
       'unicorn/no-negation-in-equality-check': 'error',
       'unicorn/no-new-array': 'error',

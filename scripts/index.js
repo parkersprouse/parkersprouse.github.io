@@ -1,4 +1,6 @@
-import { initThemeHandler } from './theme_handler.js';
+import { initThemeHandler, loadSavedTheme } from './theme_handler.js';
+
+loadSavedTheme();
 
 /**
  * Set up a window resize listener that adjusts the page header's
