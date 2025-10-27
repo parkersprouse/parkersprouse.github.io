@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.5",
-    "@fontsource/rampart-one": "^5.2.5",
+    "@fontsource/rampart-one": "^5.2.8",
     "sanitize.css": "^13.0.0"
   },
   "devDependencies": {
