@@ -22,25 +22,28 @@
 @custom-media --mobile (width < 768px);
 
 :root {
-  --bg-color: #ECEFF3;
-  --border-color: #000;
+  --bg-color: #e4e4e7;
+  --border-color: #09090b;
   --box-shadow-color: var(--border-color);
   --link-color: var(--text-color);
-  --link-hover-color: #CC0100;
-  --svg-alt-color: #545454;
-  --svg-alt-hover-color: #d45453;
-  --text-color: #000;
+  --link-hover-color: #d1335b;
+  --svg-alt-color: #52525c;
+  --svg-alt-hover-color: #da5d7c;
+  --text-color: #09090b;
+  --text-muted-color: #52525c;
 }
 
 .dark {
-  --bg-color: #222226; /* #18191b; */
-  --border-color: #3f3f46; /* #2f3135; */
+  --bg-color: #09090b; /* 18181b */
+  --border-color: #3f3f46;
   --box-shadow-color: var(--border-color);
   --link-color: var(--text-color);
-  --link-hover-color: #d45453;
-  --svg-alt-color: #cbd1db;
-  --svg-alt-hover-color: #df7f7e;
-  --text-color: #edeef0;
+  --link-hover-color: #da5d7c;
+  --svg-alt-color: #9f9fa9;
+  --svg-alt-hover-color: #d1335b;
+  --text-color: #e4e4e7;
+  --text-muted-color: #9f9fa9;
+
 }
 
 ::selection {
@@ -48,9 +51,19 @@
   background-color: var(--text-color);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    transition: all 0.15s ease;
+  }
+}
+
 html, body {
   min-height: 100%;
   min-height: 100vh;
+
+  color: var(--text-color);
+
+  background-color: var(--bg-color);
 
   /* stylelint-disable -- Unsure where, but there's a bug in Stylelint that removes comments between
                           values when running `--fix`, but it doesn't seem to be associated with a
@@ -83,7 +96,6 @@ body {
 a {
   color: var(--link-color);
   text-decoration: none;
-  transition: color 0.15s ease;
 
   @media screen and (hover: hover) {
     &:hover {
@@ -276,4 +288,8 @@ ul {
       }
     }
   }
+}
+
+.text-muted {
+  color: var(--text-muted-color);
 }
