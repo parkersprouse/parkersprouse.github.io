@@ -1,4 +1,4 @@
-import { initThemeHandler } from './theme_handler.js';
+import { initThemeHandler, onResizeCallback } from './theme_handler.js';
 
 /**
  * Set up a window resize listener that adjusts the page header's
@@ -13,12 +13,16 @@ function initTitleResizeListener() {
       if (title.style !== undefined) {
         title.style.fontSize = `${title.offsetWidth * 0.75}%`;
       }
+      onResizeCallback(true);
     } else {
       title.style.fontSize = undefined;
+      onResizeCallback(false);
     }
   });
 
   observer.observe(document.body);
+
+  onResizeCallback(window.innerWidth < 768);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

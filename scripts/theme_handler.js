@@ -3,9 +3,19 @@ const Theme = Object.freeze({
   Light: 'light',
 });
 
-const addClass = (cls) => document.body.classList.add(cls);
-const containsClass = (cls) => document.body.classList.contains(cls);
-const removeClass = (cls) => document.body.classList.remove(cls);
+const node = document.querySelector('html');
+const toggle_container = document.querySelector('.theme-toggle');
+const toggle_button = toggle_container.querySelector('button');
+
+const addClass = (cls) => node.classList.add(cls);
+const containsClass = (cls) => node.classList.contains(cls);
+const removeClass = (cls) => node.classList.remove(cls);
+export const onResizeCallback = (mobile) => {
+  is_mobile = mobile;
+  updateButtonLabel(toggle_button);
+};
+
+let is_mobile = false;
 
 function toggleTheme(theme) {
   if (theme === Theme.Light) {
@@ -18,21 +28,20 @@ function toggleTheme(theme) {
   window.localStorage.setItem('theme', theme);
 }
 
+function updateButtonLabel(btn) {
+  if (!btn) return;
+  const suffix = is_mobile ? '' : ' mode';
+  btn.textContent = containsClass(Theme.Light) ? `dark${suffix}` : `light${suffix}`;
+}
+
 export function initThemeHandler() {
-  const toggle_container = document.querySelector('.theme-toggle');
-  const toggle_button = toggle_container.querySelector('button');
+  updateButtonLabel(toggle_button);
 
-  function updateButtonLabel() {
-    toggle_button.textContent = containsClass(Theme.Light) ? 'dark mode' : 'light mode';
-  }
-
-  updateButtonLabel();
-
-  toggle_button.addEventListener('click', (e) => {
-    e.preventDefault();
+  toggle_button.addEventListener('click', (evt) => {
+    evt.preventDefault();
     if (containsClass(Theme.Light)) toggleTheme(Theme.Dark);
     else toggleTheme(Theme.Light);
-    updateButtonLabel();
+    updateButtonLabel(toggle_button);
   });
 
   toggle_container.classList.remove('invisible');
