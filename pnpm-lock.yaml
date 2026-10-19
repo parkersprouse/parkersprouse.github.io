@@ -58,8 +58,8 @@ importers:
         specifier: ^16.26.1
         version: 16.26.1(supports-color@7.2.0)(typescript@5.9.3)
       stylelint-config-clean-order:
-        specifier: ^8.0.0
-        version: 8.0.0(stylelint-order@6.0.4(stylelint@16.26.1(supports-color@7.2.0)(typescript@5.9.3)))(stylelint@16.26.1(supports-color@7.2.0)(typescript@5.9.3))
+        specifier: ^10.0.0
+        version: 10.0.0(stylelint-order@6.0.4(stylelint@16.26.1(supports-color@7.2.0)(typescript@5.9.3)))(stylelint@16.26.1(supports-color@7.2.0)(typescript@5.9.3))
       stylelint-config-standard:
         specifier: ^39.0.1
         version: 39.0.1(stylelint@16.26.1(supports-color@7.2.0)(typescript@5.9.3))
@@ -1461,8 +1461,8 @@ packages:
   style-search@0.1.0:
     resolution: {integrity: sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==}
 
-  stylelint-config-clean-order@8.0.0:
-    resolution: {integrity: sha512-Ub+1k1OQvJPf6HKMRyku6DgOmdhD5ZTrevcbfyHP21Zf7pbs5ds4a8HbKY8iadA5RFlwiXwkzqLDytxQOqfDnA==}
+  stylelint-config-clean-order@10.0.0:
+    resolution: {integrity: sha512-FKV94g3B1EMSTt0++15jgtU4YwxyeNTAxTRfDW8nx+MvgIWjT9bHRB5SoaNKmVV/hl6CmSjvgtM98lc6Z68KYw==}
     peerDependencies:
       stylelint: '>=16'
       stylelint-order: '>=6'
@@ -2830,7 +2830,7 @@ snapshots:
 
   style-search@0.1.0: {}
 
-  stylelint-config-clean-order@8.0.0(stylelint-order@6.0.4(stylelint@16.26.1(supports-color@7.2.0)(typescript@5.9.3)))(stylelint@16.26.1(supports-color@7.2.0)(typescript@5.9.3)):
+  stylelint-config-clean-order@10.0.0(stylelint-order@6.0.4(stylelint@16.26.1(supports-color@7.2.0)(typescript@5.9.3)))(stylelint@16.26.1(supports-color@7.2.0)(typescript@5.9.3)):
     dependencies:
       stylelint: 16.26.1(supports-color@7.2.0)(typescript@5.9.3)
       stylelint-order: 6.0.4(stylelint@16.26.1(supports-color@7.2.0)(typescript@5.9.3))
